@@ -1,87 +1,99 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hopla - Débarrassage & Nettoyage</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hopla - Débarras et Nettoyage</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1></h1>
-            <p>Votre partenaire pour le débarrassage et nettoyage professionnel</p>
-            <nav>
-                <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#apropos">À propos</a></li>
-                    <li><a href="#tarifs">Tarifs</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-<section id="accueil" class="accueil">
-    <div class="container">
-        <h2>Bienvenue chez Hopla</h2>
-        <p>Nous offrons des services de débarrassage et nettoyage pour maisons, appartements et locaux, ...</p>
-        <img src="accuile.png" alt="Photo illustrant nos services" />
-        <button>Contactez-nous</button>
+  <header>
+    <div class="logo">Hopla</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#services">Nos Services</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#avis">Avis Clients</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Besoin de Débarras et Nettoyage Professionnel ?</h1>
+      <p>Hopla, votre partenaire de confiance pour un espace propre et dégagé.</p>
+      <div class="cta">
+        <a href="#contact" class="btn btn-primary">Contactez-nous</a>
+        <a href="#services" class="btn btn-secondary">En savoir plus</a>
+      </div>
     </div>
-</section>
+  </section>
 
-    <section id="apropos" class="apropos">
-        <div class="container">
-            <h2>À propos de nous</h2>
-            <p>Hopla est une entreprise spécialisée dans le débarrassage et nettoyage de tous types de locaux. Notre équipe est formée pour répondre à vos besoins avec efficacité et professionnalisme.</p>
-        </div>
-    </section>
+  <section id="services" class="services">
+    <h2>Nos Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3>Débarras</h3>
+        <p>Débarras de maisons, appartements et locaux professionnels. Gestion de successions et indivisions.</p>
+      </div>
+      <div class="card">
+        <h3>Nettoyage</h3>
+        <p>Nettoyage de canapés, tapis, terrasses et après travaux ou déménagements.</p>
+      </div>
+      <div class="card">
+        <h3>Valorisation</h3>
+        <p>Revalorisation d'objets récupérables pour une démarche éco-responsable.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="tarifs" class="tarifs">
-        <div class="container">
-            <h2>Nos tarifs</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Service</th>
-                        <th>Prix</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Débarrassage de maison</td>
-                        <td>À partir de 150€</td>
-                    </tr>
-                    <tr>
-                        <td>Nettoyage de canapé</td>
-                        <td>50€ par unité</td>
-                    </tr>
-                    <tr>
-                        <td>Nettoyage de tapis</td>
-                        <td>À partir de 30€</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+  <section id="tarifs" class="tarifs">
+    <h2>Tarifs</h2>
+    <p>Découvrez nos prix compétitifs :</p>
+    <ul>
+      <li>Débarras appartement 50m² : <strong>À partir de 500€</strong></li>
+      <li>Nettoyage canapé 3 places : <strong>50€</strong></li>
+      <li>Nettoyage terrasse 20m² : <strong>80€</strong></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary">Obtenez un devis gratuit</a>
+  </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contactez-nous</h2>
-            <form action="#">
-                <input type="text" placeholder="Votre nom" required>
-                <input type="email" placeholder="Votre email" required>
-                <textarea placeholder="Votre message"></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
-        </div>
-    </section>
+  <section id="avis" class="avis">
+    <h2>Avis Clients</h2>
+    <p>Ce que nos clients disent de nous :</p>
+    <div class="avis-card">
+      <blockquote>
+        "Service impeccable et rapide ! Mon appartement n'a jamais été aussi propre." - Marie T.
+      </blockquote>
+    </div>
+    <div class="avis-card">
+      <blockquote>
+        "Une équipe professionnelle, efficace et très respectueuse. Merci Hopla !" - Jean R.
+      </blockquote>
+    </div>
+  </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Hopla - Tous droits réservés</p>
-        </div>
-    </footer>
+  <section id="contact" class="contact">
+    <h2>Contactez-nous</h2>
+    <form action="#">
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="message">Message :</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Hopla - Débarras et Nettoyage. Tous droits réservés.</p>
+  </footer>
 </body>
 </html>
+
