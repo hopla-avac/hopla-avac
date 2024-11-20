@@ -1,99 +1,65 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hopla - Débarras et Nettoyage</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hopla - Débarras et Nettoyage</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">Hopla</div>
-    <nav>
-      <ul>
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#services">Nos Services</a></li>
-        <li><a href="#tarifs">Tarifs</a></li>
-        <li><a href="#avis">Avis Clients</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <div class="header-container">
+            <h1>Hopla</h1>
+            <p>Débarras & Nettoyage Professionnel</p>
+        </div>
+    </header>
+    <main>
+        <section class="carousel">
+            <div class="carousel-track">
+                <!-- Ajouter vos photos ici -->
+                <img src="image1.jpg" alt="Photo 1">
+                <img src="image2.jpg" alt="Photo 2">
+                <img src="image3.jpg" alt="Photo 3">
+            </div>
+        </section>
 
-  <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Besoin de Débarras et Nettoyage Professionnel ?</h1>
-      <p>Hopla, votre partenaire de confiance pour un espace propre et dégagé.</p>
-      <div class="cta">
-        <a href="#contact" class="btn btn-primary">Contactez-nous</a>
-        <a href="#services" class="btn btn-secondary">En savoir plus</a>
-      </div>
-    </div>
-  </section>
+        <section class="services">
+            <h2>Nos Services</h2>
+            <p>Hopla, votre solution pour le débarras et le nettoyage rapide et efficace.</p>
+            <ul>
+                <li>Débarras de maisons, locaux et espaces divers.</li>
+                <li>Nettoyage de canapés, tapis et terrasses.</li>
+            </ul>
+        </section>
 
-  <section id="services" class="services">
-    <h2>Nos Services</h2>
-    <div class="service-cards">
-      <div class="card">
-        <h3>Débarras</h3>
-        <p>Débarras de maisons, appartements et locaux professionnels. Gestion de successions et indivisions.</p>
-      </div>
-      <div class="card">
-        <h3>Nettoyage</h3>
-        <p>Nettoyage de canapés, tapis, terrasses et après travaux ou déménagements.</p>
-      </div>
-      <div class="card">
-        <h3>Valorisation</h3>
-        <p>Revalorisation d'objets récupérables pour une démarche éco-responsable.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="tarifs" class="tarifs">
-    <h2>Tarifs</h2>
-    <p>Découvrez nos prix compétitifs :</p>
-    <ul>
-      <li>Débarras appartement 50m² : <strong>À partir de 500€</strong></li>
-      <li>Nettoyage canapé 3 places : <strong>50€</strong></li>
-      <li>Nettoyage terrasse 20m² : <strong>80€</strong></li>
-    </ul>
-    <a href="#contact" class="btn btn-primary">Obtenez un devis gratuit</a>
-  </section>
-
-  <section id="avis" class="avis">
-    <h2>Avis Clients</h2>
-    <p>Ce que nos clients disent de nous :</p>
-    <div class="avis-card">
-      <blockquote>
-        "Service impeccable et rapide ! Mon appartement n'a jamais été aussi propre." - Marie T.
-      </blockquote>
-    </div>
-    <div class="avis-card">
-      <blockquote>
-        "Une équipe professionnelle, efficace et très respectueuse. Merci Hopla !" - Jean R.
-      </blockquote>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contactez-nous</h2>
-    <form action="#">
-      <label for="name">Nom :</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">Email :</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message">Message :</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-      
-      <button type="submit" class="btn btn-primary">Envoyer</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2024 Hopla - Débarras et Nettoyage. Tous droits réservés.</p>
-  </footer>
+        <section class="pricing">
+            <h2>Tarifs</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Canapé 2 à 3 places</td><td>79 €</td></tr>
+                    <tr><td>Canapé 3 places</td><td>100 €</td></tr>
+                    <tr><td>Canapé 4 places avec angle</td><td>121 €</td></tr>
+                    <tr><td>Canapé supérieur 4 places</td><td>145 €</td></tr>
+                    <tr><td>Grand U</td><td>175 €</td></tr>
+                    <tr><td>Coussin canapé</td><td>12 €</td></tr>
+                    <tr><td>Pouf</td><td>25 €</td></tr>
+                    <tr><td>Matelas bébé</td><td>25 €</td></tr>
+                    <tr><td>Matelas 1 place 90*140</td><td>55 €</td></tr>
+                    <tr><td>Matelas 2 places 140*190</td><td>85 €</td></tr>
+                    <tr><td>Matelas King Size</td><td>95 €</td></tr>
+                    <tr><td>Tapis</td><td>Sur devis</td></tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 Hopla. Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
-
