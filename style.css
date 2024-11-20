@@ -14,13 +14,13 @@ header {
     padding: 20px 0;
 }
 
-.header-container h1 {
+header h1 {
     margin: 0;
     font-size: 2.5em;
 }
 
 header p {
-    margin: 0;
+    margin: 5px 0 0;
     font-size: 1.2em;
 }
 
@@ -32,9 +32,15 @@ header p {
     background-color: #f9f9f9;
 }
 
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
 .carousel-track {
     display: flex;
-    animation: scroll 10s linear infinite;
+    animation: scroll 15s linear infinite;
 }
 
 .carousel img {
@@ -45,13 +51,13 @@ header p {
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(-300%); }
 }
 
 .services {
     padding: 20px;
-    background-color: #f9f9f9;
     text-align: center;
+    background-color: #f9f9f9;
 }
 
 .services h2 {
@@ -61,12 +67,13 @@ header p {
 .services ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0 0;
+    margin: 20px auto;
+    max-width: 600px;
 }
 
 .services li {
     margin: 10px 0;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 
 .pricing {
@@ -79,7 +86,7 @@ header p {
 }
 
 table {
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
     border-collapse: collapse;
 }
