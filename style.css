@@ -63,6 +63,28 @@ header nav a:hover {
     margin-bottom: 1rem;
 }
 
+/* Bannière d'accueil */
+.banner-container {
+    width: 100%; /* Prend toute la largeur de la page */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    background-color: #ffffff; /* Couleur de fond pour le conteneur */
+}
+
+.banner {
+    width: 100%;
+    max-width: 1340px; /* Largeur maximale */
+    height: 508px; /* Hauteur exacte */
+    overflow: hidden; /* Coupe l'image si elle dépasse les dimensions */
+    position: relative; /* S'assure que les styles de la bannière restent isolés */
+}
+
+.banner-image {
+    width: 100%; /* Image adaptative */
+    height: 100%;
+    object-fit: cover; /* Garde les proportions de l'image */
+}
+
 /* Photos Section */
 .photos {
     display: flex;
