@@ -1,117 +1,130 @@
 /* Style global */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    color: #333;
+    font-family: Arial, sans-serif;
     background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* En-tête */
+header {
+    background-color: #ff0000; /* Rouge vif */
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
 }
 
 /* Bannière */
 .banner {
     width: 100%;
-    display: flex; /* Utiliser flexbox pour centrer le contenu */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    background-color: #ffffff; /* Fond homogène */
-    padding: 0; /* Supprime les marges internes */
-    margin: 0; /* Supprime les marges externes */
-    overflow: hidden; /* Cache les débordements */
-    height: 300px; /* Ajustez cette hauteur pour rendre la bannière plus petite */
+    text-align: center; /* Centre l'image dans son conteneur */
+    background-color: #ffffff;
+    padding: 10px;
 }
 
 .banner-image {
-    width: 100%; /* Remplit toute la largeur */
-    height: 100%; /* S'adapte à la hauteur définie pour la bannière */
-    object-fit: cover; /* Garde les proportions tout en remplissant */
+    width: 100%; /* La bannière occupe toute la largeur */
+    max-width: 1340px; /* Fixe une largeur maximale */
+    height: 508px; /* Hauteur spécifique */
+    object-fit: cover; /* S'assure que l'image s'ajuste sans déformation */
+    margin: 0 auto; /* Centre l'image horizontalement */
 }
 
-
-/* Navigation */
-nav {
-    background-color: #ff0000;
-    color: #ffffff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-.menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-.menu li {
-    margin: 0 15px;
-}
-
-.menu li a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.menu li a:hover {
-    text-decoration: underline;
-}
-
-/* Sections */
-section {
+/* Contenu principal */
+main {
     padding: 20px;
-    margin: 20px auto;
     max-width: 1200px;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
 }
 
-section h1, section h2 {
-    color: #ff0000;
-    text-align: center;
+h2 {
+    color: #ff0000; /* Rouge vif */
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
-section p {
-    text-align: center;
-    color: #555;
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-/* Galerie de photos */
-.gallery {
+/* Présentation avec images */
+.presentation {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 20px;
+    justify-content: space-between;
     gap: 20px;
 }
 
-.gallery-item {
-    flex: 1 1 calc(33.333% - 20px); /* 3 items par ligne */
+.presentation .card {
+    width: calc(33% - 20px); /* Trois cartes par ligne avec espace entre elles */
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     text-align: center;
-    background: #f9f9f9;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.gallery-image {
-    width: 100%;
-    max-width: 300px;
+.presentation .card img {
+    width: 100%; /* Ajuste l'image à la largeur de la carte */
     height: auto;
-    border-radius: 8px;
 }
 
-.gallery-item p {
-    margin-top: 10px;
-    color: #333;
+.presentation .card h3 {
+    color: #ff0000;
+    margin: 10px 0;
+    font-size: 18px;
 }
 
-/* Pied de page */
+.presentation .card p {
+    padding: 0 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Section Prix */
+#prix {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Section Contact */
+#contact {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer */
 footer {
     background-color: #ff0000;
-    color: #ffffff;
+    color: white;
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
