@@ -42,7 +42,7 @@ nav ul li a {
 
 /* Bannière */
 .banner {
-    width: 90%;
+    width: 100%;
     display: flex; /* Utiliser flexbox pour centrer le contenu */
     justify-content: center; /* Centre horizontalement l'image */
     align-items: center; /* Centre verticalement l'image */
