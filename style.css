@@ -53,7 +53,7 @@ nav ul li a {
 }
 
 .banner-image {
-    width: 80%; /* Remplit toute la largeur de son conteneur */
+    width: 85%; /* Remplit toute la largeur de son conteneur */
     max-width: 1584px; /* Fixe une largeur maximale */
     height: 396px; /* Hauteur exacte spécifiée */
     object-fit: cover; /* Remplit le conteneur tout en conservant les proportions */
