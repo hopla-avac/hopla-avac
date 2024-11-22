@@ -42,7 +42,7 @@ nav ul li a {
 
 /* Bannière */
 .banner {
-    width: 100%;
+    width: 90%;
     display: flex; /* Utiliser flexbox pour centrer le contenu */
     justify-content: center; /* Centre horizontalement l'image */
     align-items: center; /* Centre verticalement l'image */
@@ -53,7 +53,7 @@ nav ul li a {
 }
 
 .banner-image {
-    width: 100%; /* Remplit toute la largeur de son conteneur */
+    width: 90%; /* Remplit toute la largeur de son conteneur */
     max-width: 1340px; /* Fixe une largeur maximale */
     height: 508px; /* Hauteur exacte spécifiée */
     object-fit: cover; /* Remplit le conteneur tout en conservant les proportions */
