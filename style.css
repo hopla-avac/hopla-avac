@@ -43,18 +43,22 @@ nav ul li a {
 /* Bannière */
 .banner {
     width: 100%;
-    text-align: center; /* Centre l'image dans son conteneur */
-    background-color: #ffffff;
-    padding: 10px;
+    display: flex; /* Utiliser flexbox pour centrer le contenu */
+    justify-content: center; /* Centre horizontalement l'image */
+    align-items: center; /* Centre verticalement l'image */
+    background-color: #ffffff; /* Assurez une couleur de fond homogène */
+    padding: 0; /* Supprime tout espace inutile */
+    margin: 0; /* Supprime tout décalage autour */
+    overflow: hidden; /* Cache toute partie de l'image qui dépasse */
 }
 
 .banner-image {
-    width: 100%; /* La bannière occupe toute la largeur */
-    max-width: 1340px; /* Fixe une largeur maximale */
-    height: 508px; /* Hauteur spécifique */
-    object-fit: cover; /* S'assure que l'image s'ajuste sans déformation */
-    margin: 0 auto; /* Centre l'image horizontalement */
+    width: 100%; /* Remplit toute la largeur de son conteneur */
+    max-width: 1000px; /* Fixe une largeur maximale */
+    height: 508px; /* Hauteur exacte spécifiée */
+    object-fit: cover; /* Remplit le conteneur tout en conservant les proportions */
 }
+
 
 /* Contenu principal */
 main {
