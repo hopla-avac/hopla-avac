@@ -48,7 +48,7 @@ nav ul li a {
 }
 
 .banner-image {
-    width: 90%; /* Réduit la taille à 90% du conteneur */
+    width: 70%; /* Réduit la taille à 90% du conteneur */
     max-width: 800px; /* Ne dépasse pas 800 pixels */
     height: auto; /* Garde les proportions */
     margin: 0 auto; /* Centre l'image horizontalement */
