@@ -1,134 +1,100 @@
-/* Style global */
+/* Styles généraux */
 body {
-    margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* En-tête */
-header {
-    background-color: #ff0000; /* Rouge vif */
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    font-size: 24px;
-    margin: 0;
-}
-
-nav ul {
-    list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
 }
 
 /* Bannière */
 .banner {
-    width: 100%; /* Prend toute la largeur du conteneur */
-    display: flex; /* Utilise flexbox pour centrer le contenu */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    background-color: #ffffff; /* Fond homogène */
-    padding: 0; /* Supprime les marges internes */
-    margin: 0; /* Supprime les marges externes */
-    overflow: hidden; /* Cache tout débordement de l'image */
-    height: 250px; /* Hauteur fixe de la bannière */
+    width: 100%;
+    height: 300px; /* Ajusté pour accueillir la bannière */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 2px solid #d9d9d9; /* Ligne discrète */
 }
 
-.banner-image {
-    width: 1000px; /* Largeur fixe pour l'image */
-    height: 250px; /* Hauteur fixe pour l'image */
-    object-fit: cover; /* Garde les proportions en remplissant le conteneur */
+.banner-img {
+    width: 100%;
+    max-width: 1200px; /* Limite la largeur totale de la bannière */
+    height: 100%;
+    object-fit: cover; /* Ajuste pour occuper tout l'espace */
 }
 
-
-
-/* Contenu principal */
-main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Menu de navigation */
+nav {
+    background-color: #c8102e;
+    color: white;
+    padding: 10px 0;
 }
 
-h2 {
-    color: #ff0000; /* Rouge vif */
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    padding: 40px;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+}
+
+h1 {
     font-size: 24px;
-    margin-bottom: 15px;
+    color: #c8102e;
 }
 
 p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-/* Présentation avec images */
-.presentation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.presentation .card {
-    width: calc(33% - 20px); /* Trois cartes par ligne avec espace entre elles */
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-}
-
-.presentation .card img {
-    width: 100%; /* Ajuste l'image à la largeur de la carte */
-    height: auto;
-}
-
-.presentation .card h3 {
-    color: #ff0000;
-    margin: 10px 0;
-    font-size: 18px;
-}
-
-.presentation .card p {
-    padding: 0 10px;
-    font-size: 14px;
+    font-size: 16px;
     color: #555;
 }
 
-/* Section Prix */
-#prix {
-    padding: 20px;
-    text-align: center;
+/* Galerie d'images */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
-/* Section Contact */
-#contact {
-    padding: 20px;
-    text-align: center;
+.gallery img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer */
+/* Pied de page */
 footer {
-    background-color: #ff0000;
+    background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
