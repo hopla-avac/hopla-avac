@@ -1,16 +1,23 @@
-/* Styles de base */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+/* Reset */
+* {
     margin: 0;
-    color: #333;
-    background-color: #f7f7f7;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Conteneur principal */
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 /* En-tête */
@@ -43,7 +50,6 @@ body {
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    transition: background-color 0.3s ease-in-out;
 }
 
 .menu a:hover {
@@ -58,7 +64,7 @@ body {
 
 .hero p {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .btn-primary {
@@ -66,9 +72,8 @@ body {
     color: #cc0000;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
-    font-weight: bold;
     border-radius: 5px;
-    transition: all 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .btn-primary:hover {
@@ -79,19 +84,19 @@ body {
 /* Services */
 .services {
     padding: 3rem 0;
-    background-color: #fff;
     text-align: center;
+    background: #fff;
 }
 
 .services h2 {
-    margin-bottom: 2rem;
     color: #cc0000;
+    margin-bottom: 2rem;
 }
 
 .services-grid {
     display: flex;
-    gap: 2rem;
     flex-wrap: wrap;
+    gap: 2rem;
     justify-content: center;
 }
 
@@ -100,8 +105,8 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 1.5rem;
-    max-width: 300px;
     text-align: center;
+    max-width: 300px;
 }
 
 .service img {
@@ -110,51 +115,32 @@ body {
     margin-bottom: 1rem;
 }
 
-.service h3 {
-    color: #cc0000;
-    margin-bottom: 1rem;
-}
-
-/* Formulaire de contact */
-.contact-form {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-form .form-group {
-    margin-bottom: 1.5rem;
-}
-
-.contact-form input,
-.contact-form textarea {
+/* Formulaire */
+.contact-form input, .contact-form textarea {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ddd;
     border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
 .contact-form button {
-    background: #cc0000;
+    padding: 0.75rem;
+    background-color: #cc0000;
     color: white;
     border: none;
-    padding: 0.75rem;
     border-radius: 5px;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .contact-form button:hover {
-    background: #e60000;
+    background-color: #e60000;
 }
 
 /* Pied de page */
 .footer {
-    background: #cc0000;
+    background-color: #cc0000;
     color: white;
     text-align: center;
     padding: 1rem;
