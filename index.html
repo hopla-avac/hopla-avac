@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     
-    <script>
+<script>
     document.addEventListener("DOMContentLoaded", () => {
         const chatbotContainer = document.getElementById("chatbot-container");
         const chatbotToggle = document.getElementById("chatbot-toggle");
@@ -13,10 +13,14 @@
 
         const botResponses = {
             "bonjour": "Bonjour ! Comment puis-je vous aider aujourd'hui ?",
-            "services": "Nous proposons le débarras et le nettoyage de maisons, tapis, canapés et plus.",
-            "contact": "Vous pouvez nous contacter via notre formulaire en bas de page.",
+            "respect de l'environnement": "Oui, nous respectons l'environnement ! Nous utilisons des produits écologiques pour nos nettoyages et pratiquons le tri sélectif des déchets.",
+            "est-ce que vous respectez l'environnement ?": "Absolument ! Nous faisons de notre mieux pour limiter notre impact écologique.",
+            "comment avoir un devis": "Pour obtenir un devis gratuit, contactez-nous au 06 18 02 43 47 ou utilisez notre formulaire en ligne.",
+            "comment nous contacter": "Vous pouvez nous joindre par téléphone au 06 18 02 43 47 ou par email à contact@hoplaavac.com.",
+            "contact": "Vous pouvez nous contacter via notre formulaire ou par téléphone : 06 18 02 43 47.",
+            "devis": "Pour un devis gratuit, contactez-nous au 06 18 02 43 47 ou utilisez notre formulaire en ligne.",
             "merci": "Avec plaisir ! 😊",
-            "default": "Désolé, je n'ai pas compris. Pouvez-vous reformuler ?"
+            "default": "Désolé, je n'ai pas compris. Pouvez-vous reformuler votre question ?"
         };
 
         const toggleChatbot = () => {
@@ -50,6 +54,7 @@
         });
     });
 </script>
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
