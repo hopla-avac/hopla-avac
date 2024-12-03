@@ -11,22 +11,18 @@
         const chatbotInput = document.getElementById("chatbot-input");
         const chatbotSend = document.getElementById("chatbot-send");
 
-        const botResponses = {
-            "bonjour": "Bonjour ! Comment puis-je vous aider aujourd'hui ?",
-            "respect de l'environnement": "Oui, nous respectons l'environnement ! Nous utilisons des produits écologiques pour nos nettoyages et pratiquons le tri sélectif des déchets.",
-            "est-ce que vous respectez l'environnement ?": "Absolument ! Nous faisons de notre mieux pour limiter notre impact écologique.",
-            "comment avoir un devis": "Pour obtenir un devis gratuit, contactez-nous au 06 18 02 43 47 ou utilisez notre formulaire en ligne.",
-            "comment nous contacter": "Vous pouvez nous joindre par téléphone au 06 18 02 43 47 ou par email à contact@hoplaavac.com.",
-            "contact": "Vous pouvez nous contacter via notre formulaire ou par téléphone : 06 18 02 43 47.",
-            "devis": "Pour un devis gratuit, contactez-nous au 06 18 02 43 47 ou utilisez notre formulaire en ligne.",
-            "merci": "Avec plaisir ! 😊",
-            "default": "Désolé, je n'ai pas compris. Pouvez-vous reformuler votre question ?"
-        };
+        // Liste des réponses basées sur les mots-clés
+        const botKeywords = [
+            { keywords: ["bonjour", "salut", "hello"], response: "Bonjour ! Comment puis-je vous aider aujourd'hui ?" },
+            { keywords: ["environnement", "écologique", "respect"], response: "Oui, nous respectons l'environnement ! Nous utilisons des produits écologiques pour nos nettoyages." },
+            { keywords: ["devis", "tarif", "prix"], response: "Pour obtenir un devis gratuit, contactez-nous au 06 18 02 43 47 ou utilisez notre formulaire en ligne." },
+            { keywords: ["contact", "joindre", "email", "téléphone"], response: "Vous pouvez nous joindre par téléphone au 06 18 02 43 47 ou par email à contact@hoplaavac.com." },
+            { keywords: ["merci", "thanks"], response: "Avec plaisir ! 😊" },
+        ];
 
-        const toggleChatbot = () => {
-            chatbotContainer.style.display = chatbotContainer.style.display === "none" ? "block" : "none";
-        };
+        const defaultResponse = "Désolé, je n'ai pas compris. Pouvez-vous reformuler votre question ?";
 
+        // Fonction pour afficher un message dans le chatbot
         const addMessage = (message, type) => {
             const messageDiv = document.createElement("div");
             messageDiv.classList.add("chatbot-message", type);
@@ -35,17 +31,45 @@
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         };
 
+        // Fonction pour détecter les mots-clés et répondre
+        const getBotResponse = (userMessage) => {
+            const lowerCaseMessage = userMessage.toLowerCase();
+
+            for (const entry of botKeywords) {
+                if (entry.keywords.some((keyword) => lowerCaseMessage.includes(keyword))) {
+                    return entry.response;
+                }
+            }
+
+            return defaultResponse; // Si aucun mot-clé n'est détecté
+        };
+
+        // Gérer le message de l'utilisateur
         const handleUserMessage = () => {
             const userMessage = chatbotInput.value.trim();
             if (!userMessage) return;
 
-            addMessage(userMessage, "user");
+            addMessage(userMessage, "user"); // Ajouter le message utilisateur
             chatbotInput.value = "";
 
-            const botMessage = botResponses[userMessage.toLowerCase()] || botResponses["default"];
-            setTimeout(() => addMessage(botMessage, "bot"), 500);
+            const botResponse = getBotResponse(userMessage);
+            setTimeout(() => addMessage(botResponse, "bot"), 500); // Réponse avec un délai
         };
 
+        // Ouvrir le chatbot avec un message de bienvenue
+        const toggleChatbot = () => {
+            if (chatbotContainer.style.display === "none") {
+                chatbotContainer.style.display = "block";
+                // Ajouter le message de bienvenue si le chatbot s'ouvre
+                if (!chatbotMessages.innerHTML) {
+                    addMessage("Bonjour ! Comment puis-je vous aider aujourd'hui ?", "bot");
+                }
+            } else {
+                chatbotContainer.style.display = "none";
+            }
+        };
+
+        // Écouteurs d'événements
         chatbotToggle.addEventListener("click", toggleChatbot);
         chatbotClose.addEventListener("click", toggleChatbot);
         chatbotSend.addEventListener("click", handleUserMessage);
