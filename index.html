@@ -1,6 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const chatbotContainer = document.getElementById("chatbot-container");
+        const chatbotToggle = document.getElementById("chatbot-toggle");
+        const chatbotClose = document.getElementById("chatbot-close");
+        const chatbotMessages = document.getElementById("chatbot-messages");
+        const chatbotInput = document.getElementById("chatbot-input");
+        const chatbotSend = document.getElementById("chatbot-send");
+
+        const botResponses = {
+            "bonjour": "Bonjour ! Comment puis-je vous aider aujourd'hui ?",
+            "services": "Nous proposons le débarras et le nettoyage de maisons, tapis, canapés et plus.",
+            "contact": "Vous pouvez nous contacter via notre formulaire en bas de page.",
+            "merci": "Avec plaisir ! 😊",
+            "default": "Désolé, je n'ai pas compris. Pouvez-vous reformuler ?"
+        };
+
+        const toggleChatbot = () => {
+            chatbotContainer.style.display = chatbotContainer.style.display === "none" ? "block" : "none";
+        };
+
+        const addMessage = (message, type) => {
+            const messageDiv = document.createElement("div");
+            messageDiv.classList.add("chatbot-message", type);
+            messageDiv.textContent = message;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        };
+
+        const handleUserMessage = () => {
+            const userMessage = chatbotInput.value.trim();
+            if (!userMessage) return;
+
+            addMessage(userMessage, "user");
+            chatbotInput.value = "";
+
+            const botMessage = botResponses[userMessage.toLowerCase()] || botResponses["default"];
+            setTimeout(() => addMessage(botMessage, "bot"), 500);
+        };
+
+        chatbotToggle.addEventListener("click", toggleChatbot);
+        chatbotClose.addEventListener("click", toggleChatbot);
+        chatbotSend.addEventListener("click", handleUserMessage);
+        chatbotInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") handleUserMessage();
+        });
+    });
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hopla Avac - Débarras et Nettoyage</title>
@@ -8,6 +58,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    
     <!-- En-tête -->
     <header class="header">
         <div class="container">
@@ -93,5 +144,22 @@
             <p>&copy; 2024 Hopla Avac - Tous droits réservés.</p>
         </div>
     </footer>
+    
+    <!-- Chatbot -->
+<div id="chatbot-container">
+    <div id="chatbot-header">
+        <h3>Chatbot Hopla Avac</h3>
+        <button id="chatbot-close">&times;</button>
+    </div>
+    <div id="chatbot-body">
+        <div id="chatbot-messages"></div>
+    </div>
+    <div id="chatbot-footer">
+        <input type="text" id="chatbot-input" placeholder="Posez votre question...">
+        <button id="chatbot-send">Envoyer</button>
+    </div>
+</div>
+<button id="chatbot-toggle">💬 Chat</button>
+    
 </body>
 </html>
