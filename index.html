@@ -8,68 +8,89 @@
 </head>
 <body>
     <!-- En-tête -->
-    <header>
-        <nav>
-            <div class="logo">
-                <img src="logo_hopla_avac.png" alt="Logo Hopla Avac">
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <img src="logo_hopla_avac.png" alt="Hopla Avac">
+                </div>
+                <ul class="menu">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="hero">
+                <h1>Hopla Avac</h1>
+                <p>Des services rapides et professionnels pour le débarras et le nettoyage</p>
+                <a href="#services" class="btn-primary">Découvrez nos services</a>
             </div>
-            <ul class="menu">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <h1>Hopla Avac</h1>
-            <p>Débarras et Nettoyage Professionnel</p>
-            <a href="#services" class="btn">Découvrez nos services</a>
         </div>
     </header>
 
     <!-- Section des services -->
-    <main>
-        <section id="services">
+    <section id="services" class="services">
+        <div class="container">
             <h2>Nos Services</h2>
-            <div class="service">
-                <h3>Débarras</h3>
-                <p>Nous vidons vos maisons, appartements, caves, et greniers avec soin.</p>
+            <div class="services-grid">
+                <div class="service">
+                    <img src="debaras.jpg" alt="Débarras">
+                    <h3>Débarras</h3>
+                    <p>Nous vidons maisons, appartements, caves, et greniers avec soin et efficacité.</p>
+                </div>
+                <div class="service">
+                    <img src="nettoyage.jpg" alt="Nettoyage">
+                    <h3>Nettoyage</h3>
+                    <p>Nettoyage complet de tapis, canapés, terrasses et plus encore.</p>
+                </div>
+                <div class="service">
+                    <img src="recyclage.jpg" alt="Recyclage">
+                    <h3>Recyclage</h3>
+                    <p>Tri et recyclage de matériaux pour une approche respectueuse de l’environnement.</p>
+                </div>
             </div>
-            <div class="service">
-                <h3>Nettoyage</h3>
-                <p>Rendez vos tapis, canapés et terrasses comme neufs grâce à nos experts.</p>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Section À propos -->
-        <section id="about">
+    <!-- Section À propos -->
+    <section id="about" class="about">
+        <div class="container">
             <h2>À propos de nous</h2>
             <p>
-                Hopla Avac est une entreprise locale, dédiée à simplifier votre vie avec des services rapides,
-                fiables et respectueux de l'environnement.
+                Basée localement, Hopla Avac est une entreprise spécialisée dans le débarras et le nettoyage.
+                Nous vous garantissons un service rapide, fiable et respectueux de l’environnement.
+                Que vous soyez un particulier ou une entreprise, nous adaptons nos prestations à vos besoins.
             </p>
-        </section>
+        </div>
+    </section>
 
-        <!-- Section Contact -->
-        <section id="contact">
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
             <h2>Contactez-nous</h2>
-            <form action="#" method="POST">
-                <label for="name">Nom :</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Envoyer</button>
+            <form action="#" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="Votre email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Votre message" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Envoyer</button>
             </form>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Pied de page -->
-    <footer>
-        <p>&copy; 2024 Hopla Avac - Tous droits réservés.</p>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Hopla Avac - Tous droits réservés.</p>
+        </div>
     </footer>
 </body>
 </html>
