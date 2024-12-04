@@ -458,6 +458,59 @@ body {
     }
 }
 
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.social-buttons .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.social-buttons .btn i {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+/* Facebook button */
+.social-buttons .facebook {
+  background-color: #3b5998;
+}
+
+.social-buttons .facebook:hover {
+  background-color: #2d4373;
+}
+
+/* Instagram button */
+.social-buttons .instagram {
+  background-color: #E4405F;
+}
+
+.social-buttons .instagram:hover {
+  background-color: #d73552;
+}
+
+/* TikTok button */
+.social-buttons .tiktok {
+  background-color: #010101;
+}
+
+.social-buttons .tiktok:hover {
+  background-color: #181818;
+}
+
+
 /* Grand écran (au-delà de 1200px) */
 @media (min-width: 1200px) {
     .contact-grid {
