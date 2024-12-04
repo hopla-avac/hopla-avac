@@ -404,3 +404,68 @@ body {
     align-items: center;
 }
 
+/* ===============================
+   Responsive Design for Tablet & Mobile
+   =============================== */
+
+/* Tablettes (écran entre 768px et 1024px) */
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    .tarifs-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cartes plus petites */
+    }
+
+    header .nav-links {
+        display: flex;
+        flex-direction: column; /* Menu vertical */
+        align-items: center;
+    }
+
+    header .nav-links a {
+        padding: 10px 0; /* Espacement augmenté pour le clic */
+    }
+}
+
+/* Mobiles (écran de moins de 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Alignement vertical du header */
+        text-align: center;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    #tarifs h2 {
+        font-size: 1.5rem; /* Titre réduit */
+    }
+
+    .tarif-card {
+        padding: 15px; /* Espacement réduit pour petits écrans */
+    }
+
+    .btn {
+        width: 100%; /* Bouton pleine largeur */
+    }
+
+    footer {
+        font-size: 0.9rem; /* Texte plus petit */
+        text-align: center; /* Centrer le contenu */
+    }
+}
+
+/* Grand écran (au-delà de 1200px) */
+@media (min-width: 1200px) {
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr); /* Retour à deux colonnes */
+    }
+
+    .tarifs-grid {
+        grid-template-columns: repeat(4, 1fr); /* Grille en 4 colonnes */
+    }
+}
+
