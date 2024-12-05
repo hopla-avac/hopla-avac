@@ -173,6 +173,14 @@ body {
     margin-top: 10px;
 }
 
+/* Pied de page */
+.footer {
+    background-color: #cc0000;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
 /* Section Contact */
 #contact {
     padding: 50px 20px;
@@ -201,14 +209,6 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
-}
-
-/* Pied de page */
-.footer {
-    background-color: #cc0000;
-    color: white;
-    text-align: center;
-    padding: 1rem;
 }
 
 /* Chatbot Styles */
