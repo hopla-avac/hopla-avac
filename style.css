@@ -115,6 +115,86 @@ body {
     margin-bottom: 1rem;
 }
 
+/* =============================
+   Section À propos
+============================= */
+#about {
+    padding: 60px 20px;
+    background: #f7f7f7;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-content {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.about-content h2 {
+    color: #cc0000;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.about-item {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-item h3 {
+    font-size: 1.5rem;
+    color: #cc0000;
+    margin-bottom: 10px;
+}
+
+.about-item p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* =============================
+   Responsive Design pour mobile/tablette
+============================= */
+@media (max-width: 768px) {
+    #about {
+        padding: 40px 20px;
+    }
+
+    .about-content {
+        padding: 30px;
+    }
+
+    .about-details {
+        grid-template-columns: 1fr;
+    }
+
+    .about-item {
+        margin-bottom: 20px;
+    }
+}
+
 /* Section Tarifs */
 #tarifs {
     padding: 50px 20px;
