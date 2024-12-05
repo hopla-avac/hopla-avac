@@ -173,6 +173,79 @@ body {
     margin-top: 10px;
 }
 
+/* =============================
+   Section Contact (Nos Coordonnées)
+   ============================= */
+#contact {
+    padding: 50px 20px;
+    background: #f7f7f7;
+    text-align: center;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact-info h2 {
+    color: #cc0000;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.contact-info ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.contact-info li {
+    margin: 10px 0;
+}
+
+.contact-info strong {
+    color: #cc0000;
+}
+
+.contact-info a {
+    color: #cc0000;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* =============================
+   Responsive Design pour mobile/tablette
+   ============================= */
+@media (max-width: 768px) {
+    #contact {
+        padding: 40px 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-info ul li {
+        font-size: 1rem;
+    }
+}
+
+
 /* Pied de page */
 .footer {
     background-color: #cc0000;
