@@ -1,245 +1,64 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-/* Style global */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    color: #333;
+    background-color: #fff;
 }
 
-/* En-tête */
 header {
-    background-color: #e60000;
-    color: white;
-    padding: 15px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: #cc0000;
+    color: #fff;
+    text-align: center;
+    padding: 2em 1em;
 }
 
 header .logo img {
-    width: 120px;
+    width: 150px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
+header h1 {
+    font-size: 2.5em;
+    margin: 0.5em 0;
 }
 
-nav ul li {
-    margin: 0 15px;
+header p {
+    font-size: 1.2em;
+    margin: 0.5em 0 1.5em;
 }
 
-nav ul li a {
-    color: white;
+header .cta {
+    background-color: #fff;
+    color: #cc0000;
     text-decoration: none;
+    padding: 0.5em 1.5em;
+    border-radius: 5px;
     font-weight: bold;
 }
 
-/* Section principale (À propos, Services, Tarifs, Contact) */
-section {
-    padding: 40px 10%;
-    margin-bottom: 40px;
+header .cta:hover {
+    background-color: #e60000;
+    color: #fff;
 }
 
-h2 {
-    color: #e60000;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+main {
+    padding: 2em 1em;
 }
 
-/* Section À propos */
-.about {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-.about p {
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Mise en page des sections de services et tarifs */
-.service-cards,
-.tarifs {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.service-card,
-.tarif-card {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+main h2 {
+    color: #cc0000;
     text-align: center;
-    flex: 1;
 }
 
-.service-card h3,
-.tarif-card h3 {
-    color: #e60000;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+.service {
+    margin: 1em 0;
+    text-align: center;
 }
 
-.service-card p,
-.tarif-card p {
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Section Contact */
-.contact a {
-    color: #e60000;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Footer */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    background-color: #cc0000;
+    color: #fff;
     text-align: center;
-}
-
-footer .social-links {
-    margin-top: 10px;
-}
-
-footer .social-links a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-}
-
-/* Chatbot */
-#chatbot {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #e60000;
-    color: white;
-    border-radius: 50%;
-    padding: 15px;
-    cursor: pointer;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    font-size: 18px;
-    z-index: 1000;
-}
-
-#chatbot:hover {
-    background-color: #c30000;
-}
-
-#chatbot .chat-window {
-    display: none;
-    position: fixed;
-    bottom: 80px;
-    right: 30px;
-    background-color: white;
-    width: 350px;
-    height: 400px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1001;
-    padding: 15px;
-}
-
-#chatbot .chat-window.open {
-    display: block;
-}
-
-#chatbot .chat-window h4 {
-    color: #e60000;
-    margin-top: 0;
-}
-
-#chatbot .chat-window .messages {
-    height: 270px;
-    overflow-y: auto;
-    border-bottom: 2px solid #e60000;
-    margin-bottom: 10px;
-}
-
-#chatbot .chat-window .messages p {
-    margin: 10px 0;
-}
-
-#chatbot .chat-window input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-#chatbot .chat-window input[type="text"]:focus {
-    outline: none;
-    border-color: #e60000;
-}
-
-#chatbot .chat-window button {
-    background-color: #e60000;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-}
-
-#chatbot .chat-window button:hover {
-    background-color: #c30000;
-}
-
-/* Media Query - Responsivité */
-@media (max-width: 768px) {
-    .service-cards,
-    .tarifs {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service-card,
-    .tarif-card {
-        margin-bottom: 20px;
-        flex: none;
-        width: 80%;
-    }
-
-    section {
-        padding: 20px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    #chatbot {
-        right: 20px;
-        bottom: 20px;
-        padding: 12px;
-    }
-
-    #chatbot .chat-window {
-        width: 100%;
-        max-width: 350px;
-    }
+    padding: 1em 0;
+    margin-top: 2em;
 }
