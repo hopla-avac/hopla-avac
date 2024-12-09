@@ -497,27 +497,28 @@ body {
     white-space: nowrap; /* Empêche le texte de se couper */
 }
 
-
-/* Floating Button */
+/* Style du bouton flottant "Ouvrir Chatbot" */
 .open-chatbot {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #e00;
+    background-color: #e00; /* Rouge */
     color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    font-size: 16px; /* Taille du texte */
+    font-weight: bold; /* Style du texte */
     border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    gap: 5px; /* Espacement entre l'emoji et le texte */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.open-chatbot img {
-    width: 25px;
-    height: 25px;
+.open-chatbot:hover {
+    background-color: #c00; /* Rouge plus sombre */
+    transform: scale(1.05); /* Légère mise en avant */
 }
