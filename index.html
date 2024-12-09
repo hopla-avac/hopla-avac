@@ -27,7 +27,6 @@
     <button id="chatbot-toggle">💬 Chattez avec nous</button>
 
     <script>
-        // DOM Elements
         const chatbotContainer = document.getElementById('chatbot-container');
         const chatbotToggle = document.getElementById('chatbot-toggle');
         const chatbotInput = document.getElementById('chatbot-input');
@@ -50,7 +49,18 @@
             }
         });
 
-        // Add message to chatbot
+        // Auto-open after 10 seconds
+        setTimeout(() => {
+            if (!chatbotOpened) {
+                chatbotContainer.classList.add('open');
+                chatbotContainer.classList.remove('closed');
+                chatbotToggle.textContent = "× Fermer";
+                chatbotOpened = true;
+                addChatbotMessage("Bonjour ! Comment puis-je vous aider aujourd'hui ?");
+            }
+        }, 10000);
+
+        // Add message
         function addChatbotMessage(message, isBot = true) {
             const messageElement = document.createElement('div');
             messageElement.classList.add('chat-message', isBot ? 'bot' : 'user');
@@ -59,7 +69,7 @@
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
 
-        // Simulate typing delay
+        // Simulate bot typing
         function simulateTyping(callback) {
             const typingIndicator = document.createElement('div');
             typingIndicator.classList.add('chat-message', 'bot', 'typing');
@@ -73,13 +83,13 @@
             }, 1500);
         }
 
-        // Handle Bot Response
+        // Handle response
         function handleBotResponse(userMessage) {
             const lowerMessage = userMessage.toLowerCase();
             let response;
 
             if (lowerMessage.includes('environnement') || lowerMessage.includes('écologique')) {
-                response = "Oui, nous respectons l'environnement en recyclant et en utilisant des produits écologiques.";
+                response = "Oui, nous respectons l'environnement en recyclant et utilisant des produits écologiques.";
             } else if (lowerMessage.includes('devis') || lowerMessage.includes('prix') || lowerMessage.includes('coût')) {
                 response = "Pour obtenir un devis, contactez-nous par téléphone ou email.";
             } else if (lowerMessage.includes('contact') || lowerMessage.includes('téléphone')) {
@@ -107,6 +117,7 @@
     </script>
 </body>
 </html>
+
 
 
     <meta charset="UTF-8">
