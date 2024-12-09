@@ -469,87 +469,58 @@ body {
     align-self: flex-end;
 }
 
-/* Conteneur global pour la zone d'entrée */
+/* Conteneur global pour le champ d'entrée et le bouton */
 #chatbot-input-area {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 10px;
     border-top: 1px solid #ddd;
     background-color: #fff;
+    gap: 10px; /* Espace constant entre les éléments */
+    box-sizing: border-box;
 }
 
-/* Champ de saisie */
+/* Champ d'entrée pour taper le message */
 #chatbot-input-area input {
-    flex-grow: 1; /* Occupe tout l'espace disponible */
-    padding: 10px;
+    flex: 1; /* Le champ d'entrée occupe tout l'espace disponible */
+    padding: 10px 15px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 20px;
-    margin-right: 10px; /* Espace entre l'entrée et le bouton */
     outline: none;
+    box-sizing: border-box;
 }
 
-/* Bouton "Envoyer" */
+/* Bouton "💭 Envoyer" */
 #chatbot-input-area button {
-    background: #e00; /* Couleur rouge */
-    color: white;
-    font-size: 16px;
+    background: #e00; /* Rouge */
+    color: #fff;
+    font-size: 16px; /* Taille adaptée */
     font-weight: bold;
-    padding: 10px 20px; /* Ajuster la taille */
+    padding: 10px 20px; /* Taille équilibrée */
+    max-width: 120px; /* Largeur maximale fixe */
     border: none;
     border-radius: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    white-space: nowrap; /* Empêche le texte de passer à la ligne */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease;
-}
-
-/* Effet au survol */
-#chatbot-input-area button {
-    background: #e00; /* Couleur rouge */
-    color: white;
-    font-size: 16px; /* Taille du texte */
-    font-weight: bold;
-    padding: 8px 15px; /* Ajustement des marges internes */
-    max-width: 100px; /* Limite la largeur maximale du bouton */
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
-    white-space: nowrap; /* Empêche le texte de se couper */
 }
 
 #chatbot-input-area button:hover {
-    background: #c00; /* Rouge plus sombre */
+    background: #c00; /* Rouge foncé */
 }
 
-/* Ajustement pour le champ d'entrée et bouton */
-#chatbot-input-area {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-    background-color: #fff;
-    gap: 10px; /* Ajoute un espacement entre l'entrée et le bouton */
-}
-
-#chatbot-input-area input {
-    flex-grow: 1; /* Le champ d'entrée occupe tout l'espace disponible */
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    outline: none;
+/* Responsive Design : Ajustement sur petits écrans */
+@media (max-width: 480px) {
+    #chatbot-input-area button {
+        font-size: 14px; /* Taille légèrement réduite */
+        padding: 8px 15px;
+        max-width: 100px; /* Réduit la largeur maximale */
+    }
 }
 
 
