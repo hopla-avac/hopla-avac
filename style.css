@@ -470,34 +470,31 @@ body {
 }
 
 /* Input Area */
-#chatbot-input-area {
-    display: flex;
-    padding: 10px;
-    background: #fff;
-    border-top: 1px solid #e00;
-}
-
-#chatbot-input-area input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #e00;
-    border-radius: 20px;
-    margin-right: 10px;
-}
-
 #chatbot-input-area button {
-    background: #e00;
+    background: #e00; /* Couleur rouge pour le bouton */
     color: #fff;
-    font-size: 20px; /* Taille de l'emoji */
+    font-size: 16px; /* Taille du texte */
+    font-weight: bold; /* Pour un style plus élégant */
     border: none;
-    padding: 10px;
-    border-radius: 50%;
+    padding: 10px 20px;
+    border-radius: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 5px; /* Espacement entre l'emoji et le texte */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease;
+}
+
+#chatbot-input-area button:hover {
+    background: #c00; /* Rouge plus sombre au survol */
+}
+
+/* Ajustement mobile */
+#chatbot-input-area button {
+    flex-shrink: 0; /* Empêche le bouton de se rétrécir */
+    white-space: nowrap; /* Empêche le texte de se couper */
 }
 
 #chatbot-input-area button {
