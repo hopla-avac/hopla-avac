@@ -497,20 +497,6 @@ body {
     white-space: nowrap; /* Empêche le texte de se couper */
 }
 
-#chatbot-input-area button {
-    background: #e00;
-    color: #fff;
-    font-size: 20px; /* Taille de l'emoji */
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease;
-}
 
 /* Floating Button */
 .open-chatbot {
