@@ -469,6 +469,51 @@ body {
     align-self: flex-end;
 }
 
+/* Conteneur global pour la zone d'entrée */
+#chatbot-input-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+}
+
+/* Champ de saisie */
+#chatbot-input-area input {
+    flex-grow: 1; /* Occupe tout l'espace disponible */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px; /* Espace entre l'entrée et le bouton */
+    outline: none;
+}
+
+/* Bouton "Envoyer" */
+#chatbot-input-area button {
+    background: #e00; /* Couleur rouge */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px; /* Ajuster la taille */
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease;
+}
+
+/* Effet au survol */
+#chatbot-input-area button:hover {
+    background: #c00;
+}
+
+
 /* Input Area */
 #chatbot-input-area button {
     background: #e00; /* Couleur rouge pour le bouton */
