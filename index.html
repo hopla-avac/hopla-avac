@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hopla Avac - Chatbot</title>
+    <title>Chatbot Hopla Avac</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Chatbot -->
+    <!-- Chatbot Container -->
     <div id="chatbot-container" class="chatbot-closed">
         <div id="chatbot-header">
             <span>💬 Assistance Hopla Avac</span>
@@ -20,15 +20,19 @@
                 <input
                     type="text"
                     id="chatbot-input"
-                    placeholder="Posez votre question..."
+                    placeholder="Tapez votre message..."
                 />
-                <button id="send-message">Envoyer</button>
+                <button id="send-message">
+                    <img src="send-icon.svg" alt="Envoyer">
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- Button to open chatbot -->
-    <button id="open-chatbot" class="open-chatbot">Chattez avec nous</button>
+    <!-- Floating Button -->
+    <button id="open-chatbot" class="open-chatbot">
+        <img src="chat-icon.svg" alt="Chat">
+    </button>
 
     <script>
         const chatbotContainer = document.getElementById('chatbot-container');
@@ -40,18 +44,15 @@
 
         let chatbotOpened = false;
 
-        // Open/Close Chatbot
+        // Toggle Chatbot
         function toggleChatbot() {
             chatbotOpened = !chatbotOpened;
+            chatbotContainer.classList.toggle('chatbot-open', chatbotOpened);
+            chatbotContainer.classList.toggle('chatbot-closed', !chatbotOpened);
+            openChatbotButton.style.display = chatbotOpened ? 'none' : 'block';
+
             if (chatbotOpened) {
-                chatbotContainer.classList.add('chatbot-open');
-                chatbotContainer.classList.remove('chatbot-closed');
-                addChatbotMessage("Bonjour ! Comment puis-je vous aider aujourd'hui ?");
-                openChatbotButton.style.display = 'none'; // Hide the button when chatbot is open
-            } else {
-                chatbotContainer.classList.remove('chatbot-open');
-                chatbotContainer.classList.add('chatbot-closed');
-                openChatbotButton.style.display = 'block'; // Show button again when chatbot is closed
+                addChatbotMessage("Bonjour ! Comment puis-je vous aider aujourd'hui ?", true);
             }
         }
 
@@ -62,41 +63,40 @@
             }
         }, 10000);
 
-        // Close the chatbot
-        closeButton.addEventListener('click', () => {
-            toggleChatbot();
-        });
+        // Close Chatbot
+        closeButton.addEventListener('click', toggleChatbot);
 
-        // Add message to chatbot
+        // Add messages
         function addChatbotMessage(message, isBot = true) {
             const messageElement = document.createElement('div');
             messageElement.classList.add('chat-message', isBot ? 'bot' : 'user');
             messageElement.textContent = message;
+
             chatbotMessages.appendChild(messageElement);
             chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
 
-        // Handle bot response
+        // Bot response logic
         function handleBotResponse(userMessage) {
             const lowerMessage = userMessage.toLowerCase();
             let response;
 
-            if (lowerMessage.includes('environnement') || lowerMessage.includes('écologique')) {
-                response = "Oui, nous respectons l'environnement en recyclant et utilisant des produits écologiques.";
-            } else if (lowerMessage.includes('devis') || lowerMessage.includes('prix') || lowerMessage.includes('coût')) {
-                response = "Pour obtenir un devis, contactez-nous par téléphone ou email.";
-            } else if (lowerMessage.includes('contact') || lowerMessage.includes('téléphone')) {
-                response = "Vous pouvez nous appeler au 06 18 02 43 47 ou envoyer un email à hopla.avac@gmail.com.";
-            } else if (lowerMessage.includes('horaires') || lowerMessage.includes('ouvert')) {
-                response = "Nos horaires sont du Lundi au Vendredi, de 9h à 18h.";
+            if (lowerMessage.includes('environnement')) {
+                response = "Oui, nous respectons l'environnement grâce à des produits écologiques et des pratiques responsables.";
+            } else if (lowerMessage.includes('devis')) {
+                response = "Pour obtenir un devis, appelez-nous au 06 18 02 43 47 ou envoyez un email à hopla.avac@gmail.com.";
+            } else if (lowerMessage.includes('contact')) {
+                response = "Vous pouvez nous contacter par téléphone ou email. Consultez nos coordonnées dans la section contact.";
+            } else if (lowerMessage.includes('horaires')) {
+                response = "Nous sommes ouverts du lundi au vendredi, de 9h à 18h.";
             } else {
-                response = "Je suis désolé, je n'ai pas compris votre question. Pouvez-vous reformuler ?";
+                response = "Je suis désolé, je n'ai pas compris. Pouvez-vous reformuler ?";
             }
 
-            addChatbotMessage(response, true);
+            setTimeout(() => addChatbotMessage(response, true), 1000);
         }
 
-        // Handle send message button click
+        // Handle message sending
         sendMessageButton.addEventListener('click', () => {
             const userMessage = chatbotInput.value.trim();
             if (userMessage) {
@@ -106,11 +106,17 @@
             }
         });
 
-        // Open chatbot when the user clicks the button
+        chatbotInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessageButton.click();
+            }
+        });
+
         openChatbotButton.addEventListener('click', toggleChatbot);
     </script>
 </body>
 </html>
+
 
 
     <meta charset="UTF-8">
