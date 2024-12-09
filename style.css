@@ -469,22 +469,22 @@ body {
     align-self: flex-end;
 }
 
-/* Conteneur global pour le champ d'entrée et le bouton */
+/* Conteneur de la zone d'entrée */
 #chatbot-input-area {
     display: flex;
     align-items: center;
     padding: 10px;
     border-top: 1px solid #ddd;
     background-color: #fff;
-    gap: 10px; /* Espace constant entre les éléments */
+    gap: 8px; /* Espace constant entre le champ et le bouton */
     box-sizing: border-box;
 }
 
-/* Champ d'entrée pour taper le message */
+/* Champ d'entrée */
 #chatbot-input-area input {
-    flex: 1; /* Le champ d'entrée occupe tout l'espace disponible */
+    flex-grow: 1; /* Utilise tout l'espace disponible */
     padding: 10px 15px;
-    font-size: 16px;
+    font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 20px;
     outline: none;
@@ -495,17 +495,19 @@ body {
 #chatbot-input-area button {
     background: #e00; /* Rouge */
     color: #fff;
-    font-size: 16px; /* Taille adaptée */
+    font-size: 14px; /* Taille adaptée */
     font-weight: bold;
-    padding: 10px 20px; /* Taille équilibrée */
-    max-width: 120px; /* Largeur maximale fixe */
+    padding: 8px 10px; /* Taille réduite */
+    width: auto; /* Pas de largeur fixe */
+    max-width: 90px; /* Limite maximale stricte */
+    min-width: 70px; /* Limite minimale */
     border: none;
     border-radius: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    white-space: nowrap; /* Empêche le texte de passer à la ligne */
+    white-space: nowrap; /* Empêche les retours à la ligne */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease;
 }
@@ -514,12 +516,12 @@ body {
     background: #c00; /* Rouge foncé */
 }
 
-/* Responsive Design : Ajustement sur petits écrans */
+/* Responsive Design pour petits écrans */
 @media (max-width: 480px) {
     #chatbot-input-area button {
-        font-size: 14px; /* Taille légèrement réduite */
-        padding: 8px 15px;
-        max-width: 100px; /* Réduit la largeur maximale */
+        font-size: 12px; /* Réduit légèrement la taille sur petits écrans */
+        padding: 6px 8px;
+        max-width: 80px; /* Réduction supplémentaire de la largeur maximale */
     }
 }
 
