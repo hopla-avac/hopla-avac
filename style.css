@@ -384,6 +384,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
 }
+
 /* Chatbot Container */
 #chatbot-container {
     position: fixed;
@@ -408,14 +409,23 @@ body {
     opacity: 1;
 }
 
-/* Header */
 #chatbot-header {
     background: #e00;
     color: #fff;
     padding: 10px 15px;
     font-size: 16px;
     font-weight: bold;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chatbot-header button {
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 /* Messages */
@@ -476,19 +486,4 @@ body {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-}
-
-/* Toggle Button */
-#chatbot-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #e00;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 50%;
-    font-size: 18px;
-    cursor: pointer;
-    z-index: 999;
 }
