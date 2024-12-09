@@ -509,38 +509,49 @@ body {
 }
 
 /* Effet au survol */
-#chatbot-input-area button:hover {
-    background: #c00;
-}
-
-
-/* Input Area */
 #chatbot-input-area button {
-    background: #e00; /* Couleur rouge pour le bouton */
-    color: #fff;
+    background: #e00; /* Couleur rouge */
+    color: white;
     font-size: 16px; /* Taille du texte */
-    font-weight: bold; /* Pour un style plus élégant */
+    font-weight: bold;
+    padding: 8px 15px; /* Ajustement des marges internes */
+    max-width: 100px; /* Limite la largeur maximale du bouton */
     border: none;
-    padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px; /* Espacement entre l'emoji et le texte */
+    gap: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease;
+    white-space: nowrap; /* Empêche le texte de se couper */
 }
 
 #chatbot-input-area button:hover {
-    background: #c00; /* Rouge plus sombre au survol */
+    background: #c00; /* Rouge plus sombre */
 }
 
-/* Ajustement mobile */
-#chatbot-input-area button {
-    flex-shrink: 0; /* Empêche le bouton de se rétrécir */
-    white-space: nowrap; /* Empêche le texte de se couper */
+/* Ajustement pour le champ d'entrée et bouton */
+#chatbot-input-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    gap: 10px; /* Ajoute un espacement entre l'entrée et le bouton */
 }
+
+#chatbot-input-area input {
+    flex-grow: 1; /* Le champ d'entrée occupe tout l'espace disponible */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
 
 /* Style du bouton flottant "Ouvrir Chatbot" */
 .open-chatbot {
