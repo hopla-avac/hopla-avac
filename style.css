@@ -385,16 +385,24 @@ body {
     gap: 40px;
 }
 
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
 /* Chatbot Container */
 #chatbot-container {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
-    width: 350px;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
     max-width: 90%;
     background: #fff;
     border: 2px solid #e00;
-    border-radius: 12px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -404,15 +412,20 @@ body {
     z-index: 1000;
 }
 
-#chatbot-container.open {
+#chatbot-container.chatbot-open {
     transform: translateY(0);
     opacity: 1;
+}
+
+#chatbot-container.chatbot-closed {
+    transform: translateY(100%);
+    opacity: 0;
 }
 
 #chatbot-header {
     background: #e00;
     color: #fff;
-    padding: 10px 15px;
+    padding: 12px;
     font-size: 16px;
     font-weight: bold;
     display: flex;
@@ -431,14 +444,15 @@ body {
 /* Messages */
 #chatbot-messages {
     flex: 1;
-    padding: 15px;
+    padding: 10px 15px;
     overflow-y: auto;
     background: #f9f9f9;
+    border-bottom: 2px solid #e00;
 }
 
 .chat-message {
-    max-width: 70%;
-    padding: 10px;
+    max-width: 80%;
+    padding: 12px;
     border-radius: 15px;
     margin-bottom: 10px;
     font-size: 14px;
@@ -454,13 +468,6 @@ body {
     background: #e00;
     color: #fff;
     align-self: flex-end;
-}
-
-/* Typing Indicator */
-.chat-message.typing {
-    background: transparent;
-    color: #888;
-    font-style: italic;
 }
 
 /* Input Area */
@@ -486,4 +493,22 @@ body {
     border: none;
     border-radius: 50%;
     cursor: pointer;
+}
+
+/* Open Chatbot Button */
+.open-chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e00;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    z-index: 1000;
+}
+.open-chatbot:hover {
+    background-color: #c00;
 }
