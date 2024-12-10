@@ -9,11 +9,10 @@ body {
 
 /* En-tête principal */
 #main-header {
-    background-color: #e00; /* Rouge entreprise */
+    background-color: #e00; /* Rouge de l'entreprise */
     color: #fff; /* Texte blanc */
-    padding: 15px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: sticky; /* Reste visible en haut lors du scroll */
+    padding: 10px 20px;
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
@@ -28,54 +27,43 @@ body {
 }
 
 /* Logo */
-.logo-container .logo {
+.logo {
     height: 50px;
     max-width: 100%;
     object-fit: contain;
 }
 
 /* Navigation */
-.navbar {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.nav-links {
+.navbar .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
-    padding: 0;
+    gap: 15px;
     margin: 0;
+    padding: 0;
 }
 
-.nav-links li a {
+.navbar .nav-links li a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
-    text-transform: uppercase;
     font-weight: bold;
+    text-transform: uppercase;
     padding: 5px 10px;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.nav-links li a:hover {
+.navbar .nav-links li a:hover {
     background-color: #fff;
     color: #e00;
     border-radius: 5px;
 }
 
-/* Contact info */
-.contact-info {
-    display: flex;
-    align-items: center;
-}
-
+/* Numéro de téléphone */
 .phone-number {
     color: #fff;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 14px;
     text-decoration: none;
+    font-weight: bold;
     background-color: #c00; /* Rouge plus foncé */
     padding: 5px 10px;
     border-radius: 5px;
@@ -87,16 +75,23 @@ body {
     color: #e00;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-    .navbar {
-        display: none; /* Navigation masquée sur petits écrans */
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 10px;
     }
 
     .header-container {
         flex-wrap: wrap;
-        gap: 10px;
+        justify-content: center;
+        text-align: center;
     }
+
+    .phone-number {
+        margin-top: 10px;
+    }
+}
 
     .contact-info {
         justify-content: center;
