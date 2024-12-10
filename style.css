@@ -220,30 +220,57 @@ h1, h2, h3, h4 {
 /* ====================== */
 /* CONTACT SECTION        */
 /* ====================== */
+/* Section Contact */
 #contact {
-    padding: 50px 20px;
-    background-color: #fff;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
     text-align: center;
 }
 
-.contact-card {
-    margin: 10px 0;
-    padding: 15px;
-    border: 1px solid #e00;
-    border-radius: 5px;
-    display: inline-block;
+/* Titre principal de la section */
+.contact-title {
+    font-size: 2em;
+    color: #d84b16; /* Rouge pour correspondre à la charte graphique */
+    margin-bottom: 30px;
+}
+
+/* Conteneur principal */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+/* Bloc d'information de contact */
+.contact-info {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: left;
-    background-color: #fefefe;
 }
 
-.contact-card h3 {
-    margin: 0 0 10px 0;
-    color: #e00;
+/* Style pour les titres des sous-sections */
+.contact-info h3 {
+    font-size: 1.5em;
+    color: #d84b16;
+    margin-bottom: 15px;
 }
 
-.contact-card p {
-    margin: 0;
-    font-size: 14px;
+/* Informations de contact */
+.contact-info p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 1em;
+}
+
+/* Liens pour téléphone et email */
+.contact-info a {
+    color: #d84b16;
+    text-decoration: none;
 }
 
 /* ====================== */
