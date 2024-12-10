@@ -76,6 +76,58 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
+/* Section Tarifs */
+#tarifs {
+    padding: 20px;
+    background-color: #fff5f5;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#tarifs h2 {
+    text-align: center;
+    color: #e00;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.tarif-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tarif-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e00;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tarif-card:hover {
+    background-color: #b00000;
+}
+
+.tarif-item {
+    flex: 1;
+    text-align: left;
+}
+
+.tarif-price {
+    flex: 0;
+    text-align: right;
+    white-space: nowrap;
+}
+
+
 footer {
     background-color: #e00;
     color: white;
