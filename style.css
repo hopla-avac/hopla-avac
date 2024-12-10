@@ -93,43 +93,63 @@ h1, h2, h3, h4 {
 /* ====================== */
 /* SERVICES SECTION       */
 /* ====================== */
-#services {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 40px 0;
+#nos-services {
+    padding: 50px 20px;
+    background-color: #f9f9f9; /* Fond clair pour la section */
+    border-radius: 10px;
+    text-align: center;
 }
 
-.service {
-    background-color: #f8f8f8;
+.services-title {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #d84b16; /* Rouge pour correspondre à la charte graphique */
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
     padding: 20px;
     text-align: center;
-    border-radius: 10px;
-    width: 30%;
-    margin-bottom: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
+    margin-bottom: 30px; /* Espacement entre les cartes */
 }
 
-.service:hover {
-    transform: scale(1.05);
+.service-card img {
+    max-width: 100px; /* Taille des images */
+    margin-bottom: 15px;
+    border-radius: 5px; /* Coins arrondis des images */
 }
 
-.service img {
-    max-width: 100px;
-    margin-bottom: 20px;
-}
-
-.service h3 {
-    font-size: 1.6em;
-    font-weight: bold;
-    color: #d84b16; /* Rouge de l'entreprise */
+.service-card h3 {
+    color: #d84b16; /* Rouge pour les titres des services */
+    font-size: 1.4em;
     margin-bottom: 10px;
 }
 
-.service p {
-    font-size: 1.1em;
-    color: #333;
+.service-card p {
+    color: #555; /* Texte descriptif en gris */
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.service-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Effet au survol */
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        margin-bottom: 20px; /* Réduit l'espacement sur les petits écrans */
+    }
+
+    .services-title {
+        font-size: 1.8em; /* Titre plus petit sur mobile */
+    }
 }
 
 
