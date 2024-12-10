@@ -393,159 +393,145 @@ body {
     background: #fff;
 }
 
-/* Chatbot Container */
-#chatbot-container {
+/* Bouton pour ouvrir le chatbot */
+#open-chatbot {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 320px;
-    max-width: 90%;
-    border: 1px solid #e00;
-    border-radius: 15px;
+    background: #e00;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#open-chatbot:hover {
+    background: #c00;
+}
+
+/* Conteneur principal du chatbot */
+#chatbot-container {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    width: 350px;
+    max-width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
-    transform: translateY(100%);
-    opacity: 0;
-    background: white;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    height: 400px;
+    font-family: Arial, sans-serif;
 }
 
-#chatbot-container.chatbot-open {
-    transform: translateY(0);
-    opacity: 1;
+/* Masque le chatbot */
+.hidden {
+    display: none;
 }
 
+/* En-tête du chatbot */
 #chatbot-header {
     background: #e00;
     color: #fff;
     padding: 10px;
     font-size: 16px;
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 #chatbot-header button {
     background: none;
     border: none;
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
     cursor: pointer;
 }
 
-#chatbot-body {
+/* Zone de conversation */
+#chatbot-messages {
+    overflow-y: auto;
+    padding: 10px;
+    flex-grow: 1;
+    max-height: 300px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    gap: 10px;
 }
 
-#chatbot-messages {
-    flex: 1;
-    padding: 15px;
-    overflow-y: auto;
-    background: #f9f9f9;
-}
-
-.chat-message {
-    max-width: 75%;
-    margin-bottom: 12px;
+/* Style des messages */
+.message {
+    max-width: 80%;
     padding: 10px 15px;
-    border-radius: 15px;
+    border-radius: 20px;
     display: inline-block;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
 }
 
-.chat-message.bot {
-    background: #eaeaea;
-    align-self: flex-start;
-}
-
-.chat-message.user {
-    background: #e00;
+.message-user {
+    background-color: #e00;
     color: white;
     align-self: flex-end;
 }
 
-/* Conteneur de la zone d'entrée */
+.message-bot {
+    background-color: #f1f1f1;
+    color: black;
+    align-self: flex-start;
+}
+
+/* Zone d'entrée du message */
 #chatbot-input-area {
     display: flex;
     align-items: center;
     padding: 10px;
     border-top: 1px solid #ddd;
     background-color: #fff;
-    gap: 8px; /* Espace constant entre le champ et le bouton */
-    box-sizing: border-box;
+    gap: 10px;
 }
 
-/* Champ d'entrée */
 #chatbot-input-area input {
-    flex-grow: 1; /* Utilise tout l'espace disponible */
+    flex-grow: 1;
     padding: 10px 15px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 20px;
     outline: none;
-    box-sizing: border-box;
 }
 
-/* Bouton "💭 Envoyer" */
 #chatbot-input-area button {
-    background: #e00; /* Rouge */
+    background: #e00;
     color: #fff;
-    font-size: 14px; /* Taille adaptée */
+    font-size: 14px;
     font-weight: bold;
-    padding: 8px 10px; /* Taille réduite */
-    width: auto; /* Pas de largeur fixe */
-    max-width: 90px; /* Limite maximale stricte */
-    min-width: 70px; /* Limite minimale */
+    padding: 8px 15px;
+    max-width: 90px;
+    min-width: 70px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    white-space: nowrap; /* Empêche les retours à la ligne */
+    white-space: nowrap;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease;
 }
 
 #chatbot-input-area button:hover {
-    background: #c00; /* Rouge foncé */
+    background: #c00;
 }
 
-/* Responsive Design pour petits écrans */
-@media (max-width: 480px) {
-    #chatbot-input-area button {
-        font-size: 12px; /* Réduit légèrement la taille sur petits écrans */
-        padding: 6px 8px;
-        max-width: 80px; /* Réduction supplémentaire de la largeur maximale */
-    }
-}
-
-
-/* Style du bouton flottant "Ouvrir Chatbot" */
-.open-chatbot {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #e00; /* Rouge */
-    color: white;
-    font-size: 16px; /* Taille du texte */
-    font-weight: bold; /* Style du texte */
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px; /* Espacement entre l'emoji et le texte */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease, transform 0.2s ease;
-}
 
 .open-chatbot:hover {
     background-color: #c00; /* Rouge plus sombre */
