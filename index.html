@@ -117,16 +117,25 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-card">
-            <h3>Nos Coordonnées</h3>
-            <p><strong>Téléphone :</strong> 06 18 02 43 47</p>
-            <p><strong>Email :</strong> hopla.avac@gmail.com</p>
-            <p><strong>Adresse :</strong> 11 Pl. de l'Église, 68360 Soultz-Haut-Rhin</p>
-            <p><strong>Horaires :</strong> Lundi au Vendredi, 9h à 18h</p>
+    
+<section id="contact">
+    <h2 class="contact-title">Contactez-nous</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <h3>Informations de contact</h3>
+            <p><strong>Adresse :</strong> 123 Rue Principale, Soultz-Haut-Rhin</p>
+            <p><strong>Téléphone :</strong> <a href="tel:+330123456789">+33 0 12 34 56 78 9</a></p>
+            <p><strong>Email :</strong> <a href="mailto:contact@hoplaavac.fr">contact@hoplaavac.fr</a></p>
         </div>
-    </section>
+        <form class="contact-form" action="/submit-contact" method="post">
+            <h3>Envoyez-nous un message</h3>
+            <input type="text" name="name" placeholder="Votre nom" required>
+            <input type="email" name="email" placeholder="Votre email" required>
+            <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
+</section>
 
     <!-- FOOTER -->
     <footer>
