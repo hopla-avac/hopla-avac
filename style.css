@@ -107,23 +107,6 @@ body {
 }
 
 
-.services-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.service-card {
-    border: 1px solid #e00;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    padding: 15px;
-    width: 300px;
-    text-align: center;
-    margin: 10px;
-}
-
 /* Section À propos */
 #a-propos {
     padding: 40px;
