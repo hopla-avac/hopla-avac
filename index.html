@@ -7,87 +7,93 @@
     <title>Hopla Avac - Débarras et Nettoyage</title> <!-- Modifiez ici -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
-    
+
     <!-- Bouton pour ouvrir le chatbot -->
     <button id="open-chatbot" class="open-chatbot">💭 Chat</button>
 
-    <!-- Conteneur principal du chatbot (initialement masqué) -->
+    <!-- Conteneur principal du chatbot -->
     <div id="chatbot-container" class="hidden">
-        <!-- En-tête du chatbot avec un bouton pour fermer -->
+        <!-- En-tête du chatbot -->
         <div id="chatbot-header">
-            <span>Chatbot</span>
-            <button id="close-chatbot">❌</button>
+            <span>Hopla Chatbot</span>
+            <button id="close-chatbot" class="close-button">❌</button>
         </div>
 
-        <!-- Zone de conversation -->
-        <div id="chatbot-messages"></div>
+        <!-- Zone des messages -->
+        <div id="chatbot-messages" class="messages-container"></div>
 
-        <!-- Zone de saisie du message -->
+        <!-- Zone d'entrée pour écrire un message -->
         <div id="chatbot-input-area">
-            <input type="text" id="chatbot-input" placeholder="Tapez votre message..." />
+            <input type="text" id="chatbot-input" placeholder="Tapez votre message ici..." />
             <button id="send-message">💭 Envoyer</button>
         </div>
     </div>
 
-    <!-- JavaScript intégré -->
     <script>
-        // Gère l'ouverture et la fermeture du chatbot
-        const openButton = document.getElementById("open-chatbot");
-        const closeButton = document.getElementById("close-chatbot");
+        // Gérer l'ouverture et la fermeture du chatbot
+        const openChatbot = document.getElementById("open-chatbot");
+        const closeChatbot = document.getElementById("close-chatbot");
         const chatbotContainer = document.getElementById("chatbot-container");
 
-        openButton.addEventListener("click", () => {
+        openChatbot.addEventListener("click", () => {
             chatbotContainer.classList.remove("hidden");
         });
 
-        closeButton.addEventListener("click", () => {
+        closeChatbot.addEventListener("click", () => {
             chatbotContainer.classList.add("hidden");
         });
 
-        // Gère les messages et les réponses du chatbot
-        document.getElementById("send-message").addEventListener("click", function () {
-            let inputField = document.getElementById("chatbot-input");
-            let userMessage = inputField.value.trim();
+        // Gestion des messages
+        const sendMessageButton = document.getElementById("send-message");
+        const inputField = document.getElementById("chatbot-input");
+        const messagesContainer = document.getElementById("chatbot-messages");
 
-            if (userMessage) {
-                addMessage(userMessage, "user"); // Message utilisateur
-                let botResponse = getBotResponse(userMessage);
-                setTimeout(() => addMessage(botResponse, "bot"), 500); // Réponse du bot avec délai
-            }
-
-            inputField.value = ""; // Efface le champ de saisie
-            scrollChatToBottom(); // Défiler vers le bas
+        sendMessageButton.addEventListener("click", () => handleUserMessage());
+        inputField.addEventListener("keypress", (event) => {
+            if (event.key === "Enter") handleUserMessage();
         });
 
-        // Ajoute un message à l'affichage
-        function addMessage(message, sender) {
-            let messageContainer = document.createElement("div");
-            messageContainer.classList.add("message", `message-${sender}`);
-            messageContainer.innerText = message;
-            document.getElementById("chatbot-messages").appendChild(messageContainer);
+        function handleUserMessage() {
+            const userMessage = inputField.value.trim();
+            if (userMessage) {
+                addMessage(userMessage, "user");
+                const botResponse = getBotResponse(userMessage);
+                setTimeout(() => addMessage(botResponse, "bot"), 500);
+                inputField.value = ""; // Effacer la saisie
+                scrollToBottom();
+            }
         }
 
-        // Réponse automatique du chatbot
-        function getBotResponse(userMessage) {
-            if (userMessage.toLowerCase().includes("environnement")) {
+        // Ajouter un message dans le conteneur
+        function addMessage(message, sender) {
+            const messageBubble = document.createElement("div");
+            messageBubble.className = `message message-${sender}`;
+            messageBubble.textContent = message;
+            messagesContainer.appendChild(messageBubble);
+        }
+
+        // Générer une réponse du bot basée sur les mots-clés
+        function getBotResponse(message) {
+            const messageLower = message.toLowerCase();
+            if (messageLower.includes("environnement")) {
                 return "Oui, nous respectons l'environnement avec des pratiques écoresponsables.";
-            } else if (userMessage.toLowerCase().includes("devis")) {
+            } else if (messageLower.includes("devis")) {
                 return "Pour un devis, vous pouvez nous contacter au téléphone ou par email.";
-            } else if (userMessage.toLowerCase().includes("contact")) {
-                return "Contactez-nous au 06 18 02 43 47 ou à hopla.avac@gmail.com.";
+            } else if (messageLower.includes("contact")) {
+                return "Vous pouvez nous joindre au 06 18 02 43 47 ou à hopla.avac@gmail.com.";
             } else {
                 return "Je suis là pour vous aider. Que puis-je faire pour vous ?";
             }
         }
 
-        // Défiler vers le bas pour toujours voir le dernier message
-        function scrollChatToBottom() {
-            let messagesContainer = document.getElementById("chatbot-messages");
+        // Faire défiler vers le bas automatiquement
+        function scrollToBottom() {
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
     </script>
 </body>
 </html>
+
 
     
     <!-- En-tête -->
