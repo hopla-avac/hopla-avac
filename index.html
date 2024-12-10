@@ -9,7 +9,7 @@
 </head>
 
     <!-- Bouton pour ouvrir le chatbot -->
-    <button id="open-chatbot" class="open-chatbot">💭 Chat</button>
+    <button id="open-chatbot" class="chatbot-button">💭 Chat</button>
 
     <!-- Conteneur principal du chatbot -->
     <div id="chatbot-container" class="hidden">
@@ -25,30 +25,31 @@
         <!-- Zone d'entrée pour écrire un message -->
         <div id="chatbot-input-area">
             <input type="text" id="chatbot-input" placeholder="Tapez votre message ici..." />
-            <button id="send-message">💭 Envoyer</button>
+            <button id="send-message" class="send-button">💭 Envoyer</button>
         </div>
     </div>
 
     <script>
-        // Gérer l'ouverture et la fermeture du chatbot
+        // Variables DOM
         const openChatbot = document.getElementById("open-chatbot");
         const closeChatbot = document.getElementById("close-chatbot");
         const chatbotContainer = document.getElementById("chatbot-container");
+        const inputField = document.getElementById("chatbot-input");
+        const messagesContainer = document.getElementById("chatbot-messages");
+        const sendMessageButton = document.getElementById("send-message");
 
+        // Ouvrir le chatbot
         openChatbot.addEventListener("click", () => {
             chatbotContainer.classList.remove("hidden");
         });
 
+        // Fermer le chatbot
         closeChatbot.addEventListener("click", () => {
             chatbotContainer.classList.add("hidden");
         });
 
         // Gestion des messages
-        const sendMessageButton = document.getElementById("send-message");
-        const inputField = document.getElementById("chatbot-input");
-        const messagesContainer = document.getElementById("chatbot-messages");
-
-        sendMessageButton.addEventListener("click", () => handleUserMessage());
+        sendMessageButton.addEventListener("click", handleUserMessage);
         inputField.addEventListener("keypress", (event) => {
             if (event.key === "Enter") handleUserMessage();
         });
@@ -58,13 +59,12 @@
             if (userMessage) {
                 addMessage(userMessage, "user");
                 const botResponse = getBotResponse(userMessage);
-                setTimeout(() => addMessage(botResponse, "bot"), 500);
-                inputField.value = ""; // Effacer la saisie
+                setTimeout(() => addMessage(botResponse, "bot"), 600);
+                inputField.value = ""; // Effacer l'entrée utilisateur
                 scrollToBottom();
             }
         }
 
-        // Ajouter un message dans le conteneur
         function addMessage(message, sender) {
             const messageBubble = document.createElement("div");
             messageBubble.className = `message message-${sender}`;
@@ -72,13 +72,12 @@
             messagesContainer.appendChild(messageBubble);
         }
 
-        // Générer une réponse du bot basée sur les mots-clés
         function getBotResponse(message) {
             const messageLower = message.toLowerCase();
             if (messageLower.includes("environnement")) {
-                return "Oui, nous respectons l'environnement avec des pratiques écoresponsables.";
+                return "Oui, nous adoptons des pratiques respectueuses de l'environnement.";
             } else if (messageLower.includes("devis")) {
-                return "Pour un devis, vous pouvez nous contacter au téléphone ou par email.";
+                return "Pour un devis, contactez-nous par téléphone ou par email.";
             } else if (messageLower.includes("contact")) {
                 return "Vous pouvez nous joindre au 06 18 02 43 47 ou à hopla.avac@gmail.com.";
             } else {
@@ -86,14 +85,12 @@
             }
         }
 
-        // Faire défiler vers le bas automatiquement
         function scrollToBottom() {
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
     </script>
 </body>
 </html>
-
 
     
     <!-- En-tête -->
