@@ -71,21 +71,23 @@ h1, h2, h3, h4 {
 /* HERO SECTION           */
 /* ====================== */
 #hero {
-    background-color: #fff;
+    background-color: red; /* Fond rouge */
     text-align: center;
     padding: 50px 20px;
-    color: #333;
-    border-bottom: 2px solid #e00;
+    color: white; /* Couleur par défaut blanche */
 }
 
 #hero h1 {
     font-size: 2.5em;
-    margin-bottom: 20px;
+    font-weight: bold;
+    color: white; /* Texte en gras en blanc */
+    margin-bottom: 10px;
 }
 
 #hero p {
     font-size: 1.2em;
-    color: #666;
+    color: black; /* Texte normal en noir */
+    margin-top: 0;
 }
 
 /* ====================== */
