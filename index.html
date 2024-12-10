@@ -137,74 +137,44 @@
     </footer>
 
     <!-- CHATBOT -->
-    <div id="chatbot">
-        <div id="chatbot-header">
-            <span>Chatbot</span>
-            <button id="close-chatbot">X</button>
-        </div>
-        <div id="chatbot-messages"></div>
-        <div id="chatbot-input">
-            <textarea id="user-input" placeholder="Écrivez votre message..."></textarea>
-            <button id="send-message">💬 Envoyer</button>
+ <div id="chatbot" class="chatbot">
+        <div class="chatbox">
+            <div class="header">
+                <span>Chatbot</span>
+                <button class="close-btn" onclick="closeChat()">X</button>
+            </div>
+            <div class="messages"></div>
+            <div class="input-area">
+                <input type="text" id="message" placeholder="Écrivez votre message..." />
+                <button onclick="sendMessage()">Envoyer</button>
+            </div>
         </div>
     </div>
-    <button id="open-chatbot">💬</button>
 
-    <!-- JAVASCRIPT -->
     <script>
-        // Chatbot Variables
-        const chatbot = document.getElementById('chatbot');
-        const openChatbotBtn = document.getElementById('open-chatbot');
-        const closeChatbotBtn = document.getElementById('close-chatbot');
-        const sendMessageBtn = document.getElementById('send-message');
-        const userInput = document.getElementById('user-input');
-        const chatbotMessages = document.getElementById('chatbot-messages');
+        function openChat() {
+            document.getElementById('chatbot').style.display = 'block';
+        }
 
-        // Chatbot Event Listeners
-        openChatbotBtn.addEventListener('click', () => {
-            chatbot.style.display = 'block';
-            openChatbotBtn.style.display = 'none';
-        });
+        function closeChat() {
+            document.getElementById('chatbot').style.display = 'none';
+        }
 
-        closeChatbotBtn.addEventListener('click', () => {
-            chatbot.style.display = 'none';
-            openChatbotBtn.style.display = 'block';
-        });
-
-        sendMessageBtn.addEventListener('click', () => {
-            const message = userInput.value.trim();
+        function sendMessage() {
+            const message = document.getElementById('message').value;
             if (message) {
-                addMessage('user', message);
-                generateBotResponse(message);
-                userInput.value = '';
+                const messages = document.querySelector('.messages');
+                const userMessage = document.createElement('div');
+                userMessage.textContent = message;
+                messages.appendChild(userMessage);
+                document.getElementById('message').value = '';
+                messages.scrollTop = messages.scrollHeight;
             }
-        });
-
-        // Chatbot Functions
-        function addMessage(sender, text) {
-            const messageElem = document.createElement('div');
-            messageElem.className = `message ${sender}`;
-            messageElem.textContent = text;
-            chatbotMessages.appendChild(messageElem);
-            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
         }
 
-        function generateBotResponse(userMessage) {
-            const keywords = {
-                bonjour: "Bonjour ! Comment puis-je vous aider aujourd'hui ?",
-                tarifs: "Voici nos tarifs disponibles dans la section tarifs.",
-                contact: "Vous pouvez nous contacter au 06 18 02 43 47.",
-            };
-
-            let response = "Je ne suis pas sûr de comprendre votre demande.";
-            Object.keys(keywords).forEach(keyword => {
-                if (userMessage.toLowerCase().includes(keyword)) {
-                    response = keywords[keyword];
-                }
-            });
-            setTimeout(() => addMessage('bot', response), 500);
-        }
+        // Optionally, open the chatbot automatically when the page loads
+        window.onload = openChat;
     </script>
+    
 </body>
-
 </html>
