@@ -11,87 +11,68 @@ body {
 #main-header {
     background-color: #e00; /* Rouge de l'entreprise */
     color: #fff; /* Texte blanc */
-    padding: 10px 20px;
+    padding: 10px 0;
+    text-align: center;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
-/* Conteneur principal de l'en-tête */
+/* Conteneur principal */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Logo */
 .logo {
-    height: 50px;
-    max-width: 100%;
+    height: 40px;
     object-fit: contain;
 }
 
 /* Navigation */
-.navbar .nav-links {
-    list-style: none;
+.navbar {
     display: flex;
     gap: 15px;
-    margin: 0;
-    padding: 0;
 }
 
-.navbar .nav-links li a {
+.navbar a {
     color: #fff;
     text-decoration: none;
-    font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    padding: 5px 10px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 14px;
+    transition: color 0.3s ease;
 }
 
-.navbar .nav-links li a:hover {
-    background-color: #fff;
-    color: #e00;
-    border-radius: 5px;
+.navbar a:hover {
+    color: #ffe600; /* Jaune clair pour le survol */
 }
 
 /* Numéro de téléphone */
 .phone-number {
-    color: #fff;
     font-size: 14px;
-    text-decoration: none;
     font-weight: bold;
-    background-color: #c00; /* Rouge plus foncé */
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.phone-number:hover {
-    background-color: #fff;
-    color: #e00;
-}
-
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .navbar .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-
     .header-container {
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
         text-align: center;
     }
 
-    .phone-number {
-        margin-top: 10px;
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0;
     }
 }
+
 
     .contact-info {
         justify-content: center;
