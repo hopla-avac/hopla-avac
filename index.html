@@ -7,109 +7,88 @@
     <title>Hopla Avac - Débarras et Nettoyage</title> <!-- Modifiez ici -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+    
+    <!-- Bouton pour ouvrir le chatbot -->
+    <button id="open-chatbot" class="open-chatbot">💭 Chat</button>
 
-    <!-- Chatbot -->
-    <div id="chatbot-container">
-        <div id="chatbot-messages">
-            <!-- Les messages seront ajoutés ici -->
+    <!-- Conteneur principal du chatbot (initialement masqué) -->
+    <div id="chatbot-container" class="hidden">
+        <!-- En-tête du chatbot avec un bouton pour fermer -->
+        <div id="chatbot-header">
+            <span>Chatbot</span>
+            <button id="close-chatbot">❌</button>
         </div>
+
+        <!-- Zone de conversation -->
+        <div id="chatbot-messages"></div>
+
+        <!-- Zone de saisie du message -->
         <div id="chatbot-input-area">
             <input type="text" id="chatbot-input" placeholder="Tapez votre message..." />
             <button id="send-message">💭 Envoyer</button>
         </div>
     </div>
 
-    <!-- Bouton pour ouvrir et fermer le chatbot -->
-    <button id="open-chatbot" onclick="toggleChatbot()">💭 Chat</button>
-
+    <!-- JavaScript intégré -->
     <script>
-        // Toggle visibility of the chatbot
-        function toggleChatbot() {
-            let chatbot = document.getElementById("chatbot-container");
-            if (chatbot.style.display === "none" || chatbot.style.display === "") {
-                chatbot.style.display = "flex";
-                setTimeout(function () {
-                    addMessage("Bonjour ! Comment puis-je vous aider aujourd'hui ?", "bot");
-                }, 500);
-            } else {
-                chatbot.style.display = "none";
-            }
-        }
+        // Gère l'ouverture et la fermeture du chatbot
+        const openButton = document.getElementById("open-chatbot");
+        const closeButton = document.getElementById("close-chatbot");
+        const chatbotContainer = document.getElementById("chatbot-container");
 
-        // Add a new message to the chat window
-        function addMessage(message, sender) {
-            let messageContainer = document.createElement('div');
-            messageContainer.classList.add('message', 'message-' + sender);
-            messageContainer.innerText = message;
-            document.getElementById('chatbot-messages').appendChild(messageContainer);
-            scrollChatToBottom();
-        }
+        openButton.addEventListener("click", () => {
+            chatbotContainer.classList.remove("hidden");
+        });
 
-        // Scroll the chat window to the bottom
-        function scrollChatToBottom() {
-            let messagesContainer = document.getElementById('chatbot-messages');
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        }
+        closeButton.addEventListener("click", () => {
+            chatbotContainer.classList.add("hidden");
+        });
 
-        // Listen for send message button click
-        document.getElementById('send-message').addEventListener('click', function () {
-            let inputField = document.getElementById('chatbot-input');
+        // Gère les messages et les réponses du chatbot
+        document.getElementById("send-message").addEventListener("click", function () {
+            let inputField = document.getElementById("chatbot-input");
             let userMessage = inputField.value.trim();
 
             if (userMessage) {
-                // Add user's message to the chat
-                addMessage(userMessage, 'user');
-
-                // Get and send bot's response
+                addMessage(userMessage, "user"); // Message utilisateur
                 let botResponse = getBotResponse(userMessage);
-                addMessage(botResponse, 'bot');
+                setTimeout(() => addMessage(botResponse, "bot"), 500); // Réponse du bot avec délai
             }
 
-            inputField.value = ''; // Clear the input field
+            inputField.value = ""; // Efface le champ de saisie
+            scrollChatToBottom(); // Défiler vers le bas
         });
 
-        // Respond based on keywords
-        function getBotResponse(userMessage) {
-            userMessage = userMessage.toLowerCase();
+        // Ajoute un message à l'affichage
+        function addMessage(message, sender) {
+            let messageContainer = document.createElement("div");
+            messageContainer.classList.add("message", `message-${sender}`);
+            messageContainer.innerText = message;
+            document.getElementById("chatbot-messages").appendChild(messageContainer);
+        }
 
-            if (userMessage.includes("environnement") || userMessage.includes("écologique")) {
-                return "Oui, nous respectons l'environnement avec des méthodes écologiques pour le nettoyage et le débarrassage.";
-            } else if (userMessage.includes("devis")) {
-                return "Pour un devis, contactez-nous directement au 06 18 02 43 47 ou par email à hopla.avac@gmail.com.";
-            } else if (userMessage.includes("contact")) {
-                return "Appelez-nous au 06 18 02 43 47 ou écrivez-nous à hopla.avac@gmail.com.";
-            } else if (userMessage.includes("nettoyage")) {
-                return "Nous nettoyons tapis, canapés, terrasses, et bien plus !";
-            } else if (userMessage.includes("débarras")) {
-                return "Nous offrons des services de débarrassage pour maisons, appartements et studios.";
-            } else if (userMessage.includes("tarifs")) {
-                return "Les prix varient selon les services. Contactez-nous pour un devis personnalisé.";
-            } else if (userMessage.includes("horaires")) {
-                return "Nos horaires : Lundi au Vendredi, de 9h à 18h.";
-            } else if (userMessage.includes("merci")) {
-                return "Avec plaisir ! Si vous avez d'autres questions, n'hésitez pas à demander.";
+        // Réponse automatique du chatbot
+        function getBotResponse(userMessage) {
+            if (userMessage.toLowerCase().includes("environnement")) {
+                return "Oui, nous respectons l'environnement avec des pratiques écoresponsables.";
+            } else if (userMessage.toLowerCase().includes("devis")) {
+                return "Pour un devis, vous pouvez nous contacter au téléphone ou par email.";
+            } else if (userMessage.toLowerCase().includes("contact")) {
+                return "Contactez-nous au 06 18 02 43 47 ou à hopla.avac@gmail.com.";
             } else {
-                return "Je suis là pour vous aider. Posez-moi une question !";
+                return "Je suis là pour vous aider. Que puis-je faire pour vous ?";
             }
         }
-    </script>
 
+        // Défiler vers le bas pour toujours voir le dernier message
+        function scrollChatToBottom() {
+            let messagesContainer = document.getElementById("chatbot-messages");
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+    </script>
 </body>
 </html>
 
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hopla Avac - débarrassage et Nettoyage</title>
-    
-    <!-- Lien vers la feuille de style -->
-    <link rel="stylesheet" href="style.css">
-    
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-
-</head>
-<body>
     
     <!-- En-tête -->
     <header class="header">
