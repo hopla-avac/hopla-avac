@@ -7,46 +7,110 @@ body {
     line-height: 1.6;
 }
 
-header {
-    background-color: #e00;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    position: sticky;
+/* En-tête principal */
+#main-header {
+    background-color: #e00; /* Rouge entreprise */
+    color: #fff; /* Texte blanc */
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Reste visible en haut lors du scroll */
     top: 0;
     z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
+/* Conteneur principal de l'en-tête */
 .header-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    width: 100%;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.header-logo {
+/* Logo */
+.logo-container .logo {
     height: 50px;
-    width: auto;
-    margin-right: 20px;
+    max-width: 100%;
+    object-fit: contain;
 }
 
-nav {
-    margin-top: 10px;
+/* Navigation */
+.navbar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
-nav a {
-    color: white;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li a {
+    color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    font-size: 16px;
+    text-transform: uppercase;
     font-weight: bold;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.nav-links li a:hover {
+    background-color: #fff;
+    color: #e00;
+    border-radius: 5px;
 }
+
+/* Contact info */
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+
+.phone-number {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #c00; /* Rouge plus foncé */
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.phone-number:hover {
+    background-color: #fff;
+    color: #e00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Navigation masquée sur petits écrans */
+    }
+
+    .header-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .contact-info {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .phone-number {
+        font-size: 14px;
+        padding: 3px 8px;
+    }
+}
+
 
 .services-container {
     display: flex;
