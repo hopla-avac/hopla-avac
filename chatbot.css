@@ -1,49 +1,53 @@
-/* Style global du chatbot */
+/* Container principal du chatbot */
 .chat-container {
   position: fixed;
-  bottom: 10px;
-  right: 10px;
-  width: 320px;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding: 15px;
 }
 
+/* En-tête du chatbot */
 .chat-header {
   background-color: #ff6a00;
   color: white;
   padding: 10px;
-  width: 100%;
+  border-radius: 8px;
   text-align: center;
-  border-radius: 5px;
+  font-size: 16px;
 }
 
+/* Zone de message et entrée */
 .chat-box {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .message-input {
-  width: calc(100% - 90px); /* S'assurer que le champ de texte occupe presque toute la largeur */
+  width: 100%;
   padding: 10px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-right: 10px; /* Un petit espace entre le champ de texte et le bouton */
+  margin-bottom: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
+/* Bouton d'envoi */
 .send-btn {
   background-color: #ff6a00;
   color: white;
   border: none;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 14px;
   transition: background-color 0.3s;
 }
 
@@ -51,15 +55,19 @@
   background-color: #e65c00;
 }
 
-/* Pour le message de bienvenue */
+/* Message d'accueil */
 .chat-welcome-message {
-  margin-bottom: 10px;
-  padding: 10px;
   background-color: #f4f4f4;
+  padding: 10px;
   border-radius: 5px;
-  width: 100%;
+  margin-bottom: 15px;
+  font-size: 14px;
 }
 
+/* Pied de page */
 .chat-footer {
-  margin-top: 10px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 12px;
+  color: #888;
 }
