@@ -1,160 +1,199 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<header id="main-header">
-    <div class="header-container">
-        <img src="logo_hopla_avac.png" alt="Hopla Avac" class="logo">
-        <nav class="navbar">
-            <a href="#a-propos">À propos</a>
-            <a href="#services">Nos services</a>
-            <a href="#tarifs">Tarifs</a>
-            <a href="#contact">Contact</a>
-        </nav>
-        <div class="phone-number">📞 06 18 02 43 47</div>
-    </div>
-</header>
-
-
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hopla Avac - Nettoyage, Débarras et Recyclage à Soultz-Haut-Rhin">
+    <title>Hopla Avac</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/logo_hopla_avac.png" type="image/png">
+</head>
 
 <body>
-    <header>
+    <!-- HEADER -->
+    <header id="main-header">
         <div class="header-container">
-            <h1>Hopla Avac</h1>
-            <img src="logo_hopla_avac.png" alt="Logo Hopla Avac" class="header-logo">
+            <img src="images/logo_hopla_avac.png" alt="Logo Hopla Avac" class="logo">
+            <nav class="navbar">
+                <a href="#services">Nos Services</a>
+                <a href="#tarifs">Tarifs</a>
+                <a href="#about">À propos</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
-        <nav>
-            <a href="#about">À propos</a>
-            <a href="#services">Nos Services</a>
-            <a href="#tarifs">Tarifs</a>
-            <a href="#contact">Contact</a>
-        </nav>
     </header>
 
-<section id="a-propos">
-    <div class="about-container">
-        <div class="about-text">
-            <h2>À propos de nous</h2>
-            <p>
-                Chez <strong>Hopla Avac</strong>, nous sommes spécialisés dans le débarras, le nettoyage, et le recyclage. 
-                Notre mission est de vous fournir des services rapides, efficaces, et respectueux de l'environnement.
-                Nous nous engageons à traiter vos besoins avec soin et professionnalisme, tout en contribuant à un avenir plus durable.
-            </p>
-            <p>
-                Avec des années d'expérience et une équipe dévouée, nous sommes fiers de vous offrir des solutions adaptées 
-                à vos exigences, que ce soit pour des particuliers ou des entreprises.
-            </p>
-        </div>
-        <div class="about-image">
-            <img src="a-propos-image.jpg" alt="Notre équipe en action">
-        </div>
-    </div>
-</section>
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <h1>Bienvenue chez Hopla Avac</h1>
+        <p>Votre partenaire pour le nettoyage, débarras, et recyclage à Soultz-Haut-Rhin.</p>
+    </section>
 
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <h2>Nos Services</h2>
+        <div class="service-card">
+            <img src="images/debaras.png" alt="Débarras">
+            <h3>Débarras</h3>
+        </div>
+        <div class="service-card">
+            <img src="images/nettoyage.jpg" alt="Nettoyage">
+            <h3>Nettoyage</h3>
+        </div>
+        <div class="service-card">
+            <img src="images/recyclage.png" alt="Recyclage">
+            <h3>Recyclage</h3>
+        </div>
+    </section>
 
-        <section id="services">
-            <h2>Nos Services</h2>
-            <div class="services-container">
-                <div class="service-card">
-                    <img src="debaras.png" alt="Débarras" class="service-image">
-                    <h3>Débarras</h3>
-                    <p>Nous débarrassons maisons, appartements, studios et bien plus.</p>
-                </div>
-                <div class="service-card">
-                    <img src="nettoyage.jpg" alt="Nettoyage" class="service-image">
-                    <h3>Nettoyage</h3>
-                    <p>Nettoyage professionnel de tapis, canapés, terrasses, etc.</p>
-                </div>
-                <div class="service-card">
-                    <img src="recyclage.png" alt="Recyclage" class="service-image">
-                    <h3>Recyclage</h3>
-                    <p>Nous assurons un tri et un recyclage respectueux de l'environnement.</p>
-                </div>
-            </div>
-        </section>
-        
-<section id="tarifs">
-    <h2>Tarifs</h2>
-    <div class="tarif-container">
+    <!-- TARIFS SECTION -->
+    <section id="tarifs">
+        <h2>Tarifs</h2>
         <div class="tarif-card">
-            <span class="tarif-item">Canapé 2 à 3 places</span>
-            <span class="tarif-price">79 euros</span>
+            <h3>Canapé 2 à 3 places</h3>
+            <p class="tarif-price">79 euros</p>
         </div>
         <div class="tarif-card">
-            <span class="tarif-item">Canapé 3 places</span>
-            <span class="tarif-price">100 euros</span>
+            <h3>Canapé 3 places</h3>
+            <p class="tarif-price">100 euros</p>
         </div>
         <div class="tarif-card">
-            <span class="tarif-item">Canapé 4 places avec angle</span>
-            <span class="tarif-price">121 euros</span>
+            <h3>Canapé 4 places avec angle</h3>
+            <p class="tarif-price">121 euros</p>
         </div>
         <div class="tarif-card">
-            <span class="tarif-item">Canapé supérieur 4 places</span>
-            <span class="tarif-price">145 euros</span>
+            <h3>Canapé supérieur 4 places</h3>
+            <p class="tarif-price">145 euros</p>
         </div>
         <div class="tarif-card">
-            <span class="tarif-item">Big U</span>
-            <span class="tarif-price">175 euros</span>
+            <h3>Big U</h3>
+            <p class="tarif-price">175 euros</p>
         </div>
         <div class="tarif-card">
-            <span class="tarif-item">Coussin canapé</span>
-            <span class="tarif-price">12 euros</span>
+            <h3>Coussin canapé</h3>
+            <p class="tarif-price">12 euros</p>
         </div>
         <div class="tarif-card">
-            <span class="tarif-item">Pouf</span>
-            <span class="tarif-price">25 euros</span>
+            <h3>Pouf</h3>
+            <p class="tarif-price">25 euros</p>
         </div>
         <div class="tarif-card">
-            <span class="tarif-item">Matelas bébé</span>
-            <span class="tarif-price">25 euros</span>
+            <h3>Matelas bébé</h3>
+            <p class="tarif-price">25 euros</p>
         </div>
         <div class="tarif-card">
-            <span class="tarif-item">Matelas 1 place (90×140)</span>
-            <span class="tarif-price">55 euros</span>
+            <h3>Matelas 1 place 90*140</h3>
+            <p class="tarif-price">55 euros</p>
         </div>
         <div class="tarif-card">
-            <span class="tarif-item">Matelas 2 places (140×190)</span>
-            <span class="tarif-price">85 euros</span>
+            <h3>Matelas 2 places 140*190</h3>
+            <p class="tarif-price">85 euros</p>
         </div>
         <div class="tarif-card">
-            <span class="tarif-item">Matelas King Size</span>
-            <span class="tarif-price">95 euros</span>
+            <h3>Matelas King Size</h3>
+            <p class="tarif-price">95 euros</p>
         </div>
         <div class="tarif-card">
-            <span class="tarif-item">Tapis</span>
-            <span class="tarif-price">Sur devis</span>
+            <h3>Tapis</h3>
+            <p class="tarif-price">Sur devis</p>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>À propos</h2>
+        <p>Hopla Avac est une entreprise locale spécialisée dans le débarras, le nettoyage, et le recyclage. Nous
+            offrons des services fiables et de qualité pour répondre à vos besoins, que ce soit pour des particuliers
+            ou des entreprises.</p>
+    </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Téléphone : 06 18 02 43 47</p>
-            <p>Email : hopla.avac@gmail.com</p>
-            <p>Adresse : 11 Pl. de l'Église, 68360 Soultz-Haut-Rhin</p>
-            <p>Horaires : Lundi au Vendredi, 9h à 18h</p>
-        </section>
-    </main>
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-card">
+            <h3>Nos Coordonnées</h3>
+            <p><strong>Téléphone :</strong> 06 18 02 43 47</p>
+            <p><strong>Email :</strong> hopla.avac@gmail.com</p>
+            <p><strong>Adresse :</strong> 11 Pl. de l'Église, 68360 Soultz-Haut-Rhin</p>
+            <p><strong>Horaires :</strong> Lundi au Vendredi, 9h à 18h</p>
+        </div>
+    </section>
 
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2024 Hopla Avac - Tous droits réservés.</p>
+        <p>&copy; 2024 Hopla Avac. Tous droits réservés. <a href="#main-header">Retour en haut</a></p>
     </footer>
-    <button id="open-chatbot" class="open-chatbot">
-        💭 Chat
-    </button>
-    <div id="chatbot-container" class="hidden">
+
+    <!-- CHATBOT -->
+    <div id="chatbot">
         <div id="chatbot-header">
-            <span>Hopla Avac</span>
-            <button class="chatbot-close-button">&times;</button>
+            <span>Chatbot</span>
+            <button id="close-chatbot">X</button>
         </div>
         <div id="chatbot-messages"></div>
-        <div id="chatbot-input-area">
-            <input type="text" id="chatbot-input" placeholder="Tapez votre message ici...">
-            <button id="send-message">💭 Envoyer</button>
+        <div id="chatbot-input">
+            <textarea id="user-input" placeholder="Écrivez votre message..."></textarea>
+            <button id="send-message">💬 Envoyer</button>
         </div>
     </div>
-    <script src="chatbot.js"></script>
+    <button id="open-chatbot">💬</button>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Chatbot Variables
+        const chatbot = document.getElementById('chatbot');
+        const openChatbotBtn = document.getElementById('open-chatbot');
+        const closeChatbotBtn = document.getElementById('close-chatbot');
+        const sendMessageBtn = document.getElementById('send-message');
+        const userInput = document.getElementById('user-input');
+        const chatbotMessages = document.getElementById('chatbot-messages');
+
+        // Chatbot Event Listeners
+        openChatbotBtn.addEventListener('click', () => {
+            chatbot.style.display = 'block';
+            openChatbotBtn.style.display = 'none';
+        });
+
+        closeChatbotBtn.addEventListener('click', () => {
+            chatbot.style.display = 'none';
+            openChatbotBtn.style.display = 'block';
+        });
+
+        sendMessageBtn.addEventListener('click', () => {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage('user', message);
+                generateBotResponse(message);
+                userInput.value = '';
+            }
+        });
+
+        // Chatbot Functions
+        function addMessage(sender, text) {
+            const messageElem = document.createElement('div');
+            messageElem.className = `message ${sender}`;
+            messageElem.textContent = text;
+            chatbotMessages.appendChild(messageElem);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        function generateBotResponse(userMessage) {
+            const keywords = {
+                bonjour: "Bonjour ! Comment puis-je vous aider aujourd'hui ?",
+                tarifs: "Voici nos tarifs disponibles dans la section tarifs.",
+                contact: "Vous pouvez nous contacter au 06 18 02 43 47.",
+            };
+
+            let response = "Je ne suis pas sûr de comprendre votre demande.";
+            Object.keys(keywords).forEach(keyword => {
+                if (userMessage.toLowerCase().includes(keyword)) {
+                    response = keywords[keyword];
+                }
+            });
+            setTimeout(() => addMessage('bot', response), 500);
+        }
+    </script>
 </body>
 
 </html>
