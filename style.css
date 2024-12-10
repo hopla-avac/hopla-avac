@@ -137,26 +137,62 @@ h1, h2, h3, h4 {
 /* TARIFS SECTION         */
 /* ====================== */
 #tarifs {
-    padding: 50px 20px;
-    background-color: #fff;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Utilisation du grid pour une disposition fluide */
+    gap: 30px;
+    padding: 50px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
 }
 
 .tarif-card {
-    margin: 10px 0;
-    padding: 15px;
-    background-color: #e00;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 5px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
-.tarif-card h3, .tarif-card p {
-    margin: 0;
-    font-size: 16px;
-    text-transform: capitalize;
+.tarif-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.tarif-card h3 {
+    font-size: 1.4em;
+    color: #d84b16; /* Rouge de l'entreprise */
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.tarif-price {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.tarif-price:before {
+    content: "€";
+    font-size: 1.5em;
+    color: #d84b16;
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    #tarifs {
+        padding: 20px;
+    }
+
+    .tarif-card h3 {
+        font-size: 1.2em;
+    }
+
+    .tarif-price {
+        font-size: 1em;
+    }
 }
 
 /* ====================== */
