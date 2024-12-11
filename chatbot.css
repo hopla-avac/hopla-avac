@@ -75,7 +75,7 @@
 }
 
 #chatbot-messages .user-message {
-    background-color: #ff6600;
+    background-color: #ff0000;
     color: white;
     align-self: flex-end;
 }
@@ -98,7 +98,7 @@
 }
 
 #chatbot-input-container button {
-    background-color: #ff6600;
+    background-color: #ff0000;
     color: white;
     border: none;
     padding: 8px 15px;
