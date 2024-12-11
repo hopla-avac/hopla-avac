@@ -1,295 +1,131 @@
-/* ====================== */
-/* GLOBAL STYLES          */
-/* ====================== */
-body {
+/* Style général du chatbot */
+#chatbot {
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f9f9f9;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-h1, h2, h3, h4 {
-    margin: 0;
-    padding: 0;
-    color: #e00; /* Rouge d'entreprise */
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ====================== */
-/* HEADER SECTION         */
-/* ====================== */
-#main-header {
-    background-color: #e00;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.header-container {
+/* En-tête du chatbot */
+#chatbot-header {
+    background-color: red;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
-.logo {
-    height: 40px;
-    object-fit: contain;
+#chatbot-header h2 {
+    margin: 0;
+    font-size: 16px;
 }
 
-.navbar {
-    display: flex;
-    gap: 15px;
-}
-
-.navbar a {
-    color: #fff;
-    text-decoration: none;
+#chatbot-header button {
+    background-color: white;
+    color: red;
+    border: none;
     font-weight: bold;
-    text-transform: uppercase;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-    color: #ffe600;
-}
-
-/* ====================== */
-/* HERO SECTION           */
-/* ====================== */
-#hero {
-    background-color: red; /* Fond rouge */
-    text-align: center;
-    padding: 50px 20px;
-    color: white; /* Couleur par défaut blanche */
-}
-
-#hero h1 {
-    font-size: 2.5em;
-    font-weight: bold;
-    color: white; /* Texte en gras en blanc */
-    margin-bottom: 10px;
-}
-
-#hero p {
-    font-size: 1.2em;
-    color: black; /* Texte normal en noir */
-    margin-top: 0;
-}
-
-/* ====================== */
-/* SERVICES SECTION       */
-/* ====================== */
-/* Style de la section globale */
-#nos-services {
-    padding: 30px 20px;
-    background-color: #f5f5f5; /* Couleur de fond légère */
-    text-align: center;
-}
-
-/* Style du titre principal */
-.services-title {
-    font-size: 2em;
-    color: #d84b16; /* Rouge pour attirer l'attention */
-    margin-bottom: 20px;
-}
-
-/* Conteneur pour aligner les cartes */
-.services-container {
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px; /* Espacement entre les cartes */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Style des cartes individuelles */
-.service-card {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 300px; /* Largeur fixe pour éviter les cartes de tailles différentes */
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+#chatbot-header button:hover {
+    background-color: lightgray;
 }
 
-.service-card img {
-    width: 80px; /* Taille fixe des images */
-    height: 80px;
-    object-fit: cover;
-    margin-bottom: 10px;
+/* Zone des messages */
+#chatbot-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+/* Messages utilisateur */
+.user-message {
+    text-align: right;
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px 15px 0 15px;
+    display: inline-block;
+    max-width: 80%;
+}
+
+/* Messages du chatbot */
+.bot-message {
+    text-align: left;
+    background-color: #f8d7da;
+    color: #842029;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px 15px 15px 0;
+    display: inline-block;
+    max-width: 80%;
+}
+
+/* Zone de saisie */
+#chatbot-input-area {
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+}
+
+#chatbot-input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.service-card h3 {
-    color: #d84b16;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.service-card p {
-    color: #333;
-    font-size: 0.9em;
-    line-height: 1.5;
-}
-
-
-/* ====================== */
-/* TARIFS SECTION         */
-/* ====================== */
-/* Style global pour la section des tarifs */
-#tarifs {
-    padding: 30px 20px;
-    background-color: #f5f5f5;
-    text-align: center;
-}
-
-/* Titre principal */
-.tarifs-title {
-    font-size: 2em;
-    color: #d84b16; /* Rouge pour se démarquer */
-    margin-bottom: 20px;
-}
-
-/* Conteneur des cartes */
-.tarifs-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px; /* Espacement entre les cartes */
-}
-
-/* Style des cartes */
-.tarif-card {
-    background: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 250px; /* Taille fixe */
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Style des titres dans les cartes */
-.tarif-card h3 {
-    color: #d84b16;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-/* Style des prix */
-.tarif-card .price {
-    color: #333;
-    font-size: 1.5em;
+#chatbot-send {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    font-size: 14px;
     font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-
-/* ====================== */
-/* ABOUT SECTION          */
-/* ====================== */
-#about {
-    padding: 50px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
+#chatbot-send:hover {
+    background-color: darkred;
 }
 
-#about h2 {
-    margin-bottom: 20px;
+/* Scroll personnalisé */
+#chatbot-messages::-webkit-scrollbar {
+    width: 8px;
 }
 
-#about p {
-    font-size: 1.1em;
-    color: #555;
-    line-height: 1.6em;
+#chatbot-messages::-webkit-scrollbar-thumb {
+    background-color: red;
+    border-radius: 4px;
 }
 
-/* ====================== */
-/* CONTACT SECTION        */
-/* ====================== */
-/* Section Contact */
-#contact {
-    padding: 40px 20px;
-    background-color: #f5f5f5;
-    text-align: center;
-}
-
-/* Titre principal de la section */
-.contact-title {
-    font-size: 2em;
-    color: #d84b16; /* Rouge pour correspondre à la charte graphique */
-    margin-bottom: 30px;
-}
-
-/* Conteneur principal */
-.contact-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: center;
-}
-
-/* Bloc d'information de contact */
-.contact-info {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-/* Style pour les titres des sous-sections */
-.contact-info h3 {
-    font-size: 1.5em;
-    color: #d84b16;
-    margin-bottom: 15px;
-}
-
-/* Informations de contact */
-.contact-info p {
-    margin: 10px 0;
-    color: #333;
-    font-size: 1em;
-}
-
-/* Liens pour téléphone et email */
-.contact-info a {
-    color: #d84b16;
-    text-decoration: none;
-}
-
-/* ====================== */
-/* FOOTER SECTION         */
-/* ====================== */
-footer {
-    background-color: #e00;
-    color: #fff;
-    text-align: center;
-    padding: 20px 10px;
-    margin-top: 30px;
-}
-
-footer a {
-    color: #ffe600;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer a:hover {
-    text-decoration: underline;
+#chatbot-messages::-webkit-scrollbar-thumb:hover {
+    background-color: darkred;
 }
