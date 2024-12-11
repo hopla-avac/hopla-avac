@@ -146,9 +146,10 @@
     <link rel="stylesheet" href="chatbot.css">
 </head>
 <body>
+
     <div id="chatbot">
         <div id="chatbot-header">
-            <h2>Assistance Hopla avac</h2>
+            <h2>Assistance Hopla Avac</h2>
             <button id="close-chatbot">X</button>
         </div>
         <div id="chatbot-messages"></div>
@@ -159,6 +160,12 @@
     </div>
 
     <script>
+        // Fermeture du chatbot
+        document.getElementById("close-chatbot").addEventListener("click", function() {
+            document.getElementById("chatbot").style.display = "none"; // Cache le chatbot
+        });
+
+        // Réponses du chatbot
         const chatbotResponses = {
             tarifs: "Nos tarifs sont : Canapé 3 places : 100€, Canapé 4 places : 121€, Coussin canapé : 12€.",
             environnement: "Nous sommes engagés dans une démarche écologique avec du mobilier fabriqué à partir de matériaux recyclés.",
@@ -166,6 +173,7 @@
             coordonnees: "Voici nos coordonnées : Adresse - 123 Rue Exemples, Téléphone - 01 23 45 67 89."
         };
 
+        // Mots-clés pour le chatbot
         const keywords = {
             tarifs: ["prix", "coût", "tarif", "combien", "cher", "payant", "facture"],
             environnement: ["écologie", "durable", "recyclage", "environnement", "vert", "pollution", "éco"],
@@ -173,10 +181,12 @@
             coordonnees: ["adresse", "téléphone", "contact", "mail", "où", "localiser", "trouver"]
         };
 
+        // Gestion de l'envoi des messages
         document.getElementById("chatbot-send").addEventListener("click", () => {
             const userInput = document.getElementById("chatbot-input").value.toLowerCase();
             let response = "Je suis désolé, je ne comprends pas votre demande. Pouvez-vous reformuler ?";
 
+            // Vérifier si l'entrée utilisateur correspond à un mot-clé
             for (const [category, words] of Object.entries(keywords)) {
                 if (words.some(word => userInput.includes(word))) {
                     response = chatbotResponses[category];
@@ -184,11 +194,13 @@
                 }
             }
 
+            // Afficher le message utilisateur et la réponse du chatbot
             displayMessage(userInput, "user");
             displayMessage(response, "bot");
-            document.getElementById("chatbot-input").value = "";
+            document.getElementById("chatbot-input").value = ""; // Effacer le champ de texte
         });
 
+        // Fonction pour afficher un message
         function displayMessage(message, sender) {
             const messageContainer = document.createElement("div");
             messageContainer.className = sender === "user" ? "user-message" : "bot-message";
