@@ -147,6 +147,9 @@
 </head>
 <body>
 
+    <!-- Bouton pour ouvrir le chatbot -->
+    <button id="open-chatbot" class="chatbot-button">💬</button>
+
     <div id="chatbot">
         <div id="chatbot-header">
             <h2>Assistance Hopla Avac</h2>
@@ -160,6 +163,11 @@
     </div>
 
     <script>
+        // Ouvrir le chatbot
+        document.getElementById("open-chatbot").addEventListener("click", function() {
+            document.getElementById("chatbot").style.display = "flex"; // Affiche le chatbot
+        });
+
         // Fermeture du chatbot
         document.getElementById("close-chatbot").addEventListener("click", function() {
             document.getElementById("chatbot").style.display = "none"; // Cache le chatbot
@@ -210,5 +218,6 @@
     </script>
 </body>
 </html>
+
 
 
