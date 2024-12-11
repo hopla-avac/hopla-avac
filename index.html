@@ -146,64 +146,57 @@
     <link rel="stylesheet" href="chatbot.css">
 </head>
 <body>
-    <!-- Bouton pour ouvrir le chatbot -->
-    <div id="chatbot-icon" onclick="toggleChatbot()">
-        💬
-    </div>
-
-    <!-- Conteneur du chatbot -->
-    <div id="chatbot-container">
-        <!-- En-tête du chatbot -->
+    <div id="chatbot">
         <div id="chatbot-header">
-            <h2>assistance Hopla avac</h2>
-            <button onclick="toggleChatbot()">X</button>
+            <h2>Assistance Hopla avac</h2>
+            <button id="close-chatbot">X</button>
         </div>
-
-        <!-- Fenêtre des messages -->
-        <div id="chatbot-messages">
-            <div class="bot-message">Bonjour, comment puis-je vous aider ?</div>
-        </div>
-
-        <!-- Champ de saisie -->
-        <div id="chatbot-input-container">
+        <div id="chatbot-messages"></div>
+        <div id="chatbot-input-area">
             <input type="text" id="chatbot-input" placeholder="Écrivez votre message...">
-            <button onclick="sendMessage()">Envoyer</button>
+            <button id="chatbot-send">Envoyer</button>
         </div>
     </div>
 
     <script>
-        // Fonction pour afficher/masquer le chatbot
-        function toggleChatbot() {
-            const chatbot = document.getElementById('chatbot-container');
-            chatbot.style.display = chatbot.style.display === 'block' ? 'none' : 'block';
-        }
+        const chatbotResponses = {
+            tarifs: "Nos tarifs sont : Canapé 3 places : 100€, Canapé 4 places : 121€, Coussin canapé : 12€.",
+            environnement: "Nous sommes engagés dans une démarche écologique avec du mobilier fabriqué à partir de matériaux recyclés.",
+            services: "Nous proposons : livraison rapide, assistance après-vente, et personnalisation des produits.",
+            coordonnees: "Voici nos coordonnées : Adresse - 123 Rue Exemples, Téléphone - 01 23 45 67 89."
+        };
 
-        // Fonction pour envoyer un message
-        function sendMessage() {
-            const input = document.getElementById('chatbot-input');
-            const messages = document.getElementById('chatbot-messages');
+        const keywords = {
+            tarifs: ["prix", "coût", "tarif", "combien", "cher", "payant", "facture"],
+            environnement: ["écologie", "durable", "recyclage", "environnement", "vert", "pollution", "éco"],
+            services: ["services", "offre", "options", "disponible", "prestations", "aide", "accompagnement"],
+            coordonnees: ["adresse", "téléphone", "contact", "mail", "où", "localiser", "trouver"]
+        };
 
-            if (input.value.trim() !== '') {
-                // Ajout du message utilisateur
-                const userMessage = document.createElement('div');
-                userMessage.className = 'user-message';
-                userMessage.textContent = input.value;
-                messages.appendChild(userMessage);
+        document.getElementById("chatbot-send").addEventListener("click", () => {
+            const userInput = document.getElementById("chatbot-input").value.toLowerCase();
+            let response = "Je suis désolé, je ne comprends pas votre demande. Pouvez-vous reformuler ?";
 
-                // Ajout d'une réponse automatique du bot
-                const botMessage = document.createElement('div');
-                botMessage.className = 'bot-message';
-                botMessage.textContent = "Merci pour votre message !";
-                messages.appendChild(botMessage);
-
-                // Efface le champ de saisie
-                input.value = '';
-
-                // Scroll en bas
-                messages.scrollTop = messages.scrollHeight;
+            for (const [category, words] of Object.entries(keywords)) {
+                if (words.some(word => userInput.includes(word))) {
+                    response = chatbotResponses[category];
+                    break;
+                }
             }
+
+            displayMessage(userInput, "user");
+            displayMessage(response, "bot");
+            document.getElementById("chatbot-input").value = "";
+        });
+
+        function displayMessage(message, sender) {
+            const messageContainer = document.createElement("div");
+            messageContainer.className = sender === "user" ? "user-message" : "bot-message";
+            messageContainer.textContent = message;
+            document.getElementById("chatbot-messages").appendChild(messageContainer);
         }
     </script>
 </body>
 </html>
+
 
