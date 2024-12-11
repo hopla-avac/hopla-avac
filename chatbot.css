@@ -14,7 +14,7 @@
 
 /* Header of chatbot */
 #chatbot-header {
-    background-color: #0056b3; /* Dark blue background */
+    background-color: #d32f2f; /* Rouge */
     color: white;
     padding: 15px;
     border-top-left-radius: 15px;
@@ -31,7 +31,7 @@
 
 #close-chatbot {
     background-color: #ffffff;
-    color: #0056b3;
+    color: #d32f2f;
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
@@ -62,13 +62,13 @@
 }
 
 .user-message {
-    background-color: #0056b3;
+    background-color: #d32f2f; /* Rouge pour l'utilisateur */
     color: white;
     align-self: flex-end;
 }
 
 .bot-message {
-    background-color: #e0e0e0;
+    background-color: #f0f0f0;
     color: #333;
     align-self: flex-start;
 }
@@ -92,11 +92,21 @@
 }
 
 #chatbot-send {
-    background-color: #0056b3;
+    background-color: #d32f2f; /* Rouge */
     color: white;
     padding: 10px 15px;
     border: none;
     cursor: pointer;
     border-radius: 10px;
     margin-left: 10px;
+}
+
+/* Fonction de fermeture du chatbot */
+#close-chatbot {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#close-chatbot:hover {
+    background-color: #ffcccc;
 }
