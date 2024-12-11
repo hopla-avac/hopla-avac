@@ -84,6 +84,7 @@ body {
     margin-bottom: 10px;
 }
 
+
 /* Section des tarifs */
 #tarifs {
     padding: 40px 20px;
@@ -100,17 +101,18 @@ body {
 .tarifs-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Réduit l'écart entre les cartes */
+    justify-content: space-evenly; /* Réduit encore l'espace entre les cartes */
+    gap: 10px; /* Réduit l'écart entre les cartes */
 }
 
 .tarif-card {
     background-color: white;
     border-radius: 10px;
     border: 1px solid #ddd;
-    padding: 30px;  /* Cartes plus grandes */
-    width: 250px;  /* Taille de la carte plus grande */
+    padding: 30px;
+    width: 250px; 
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Réduit l'espace sous les cartes */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -142,15 +144,16 @@ body {
 /* Responsivité pour les petits écrans */
 @media (max-width: 768px) {
     .tarif-card {
-        width: 48%; /* Réduit la taille des cartes sur les petits écrans */
+        width: 48%; 
     }
 }
 
 @media (max-width: 480px) {
     .tarif-card {
-        width: 100%; /* Une carte par ligne sur les très petits écrans */
+        width: 100%;
     }
 }
+
 
 /* ABOUT SECTION */
 #about {
