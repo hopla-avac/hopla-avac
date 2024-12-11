@@ -137,54 +137,73 @@
     </footer>
 
     <!-- CHATBOT -->
-    
+<!DOCTYPE html>
+<html lang="fr">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="chatbot.css">  <!-- Linking to the chatbot CSS file -->
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="chatbot.css">
 </head>
 <body>
-    <!-- Chatbot Button -->
-    <div id="chatButton" class="chat-button">
-        <span>💬</span>
+    <!-- Bouton pour ouvrir le chatbot -->
+    <div id="chatbot-icon" onclick="toggleChatbot()">
+        💬
     </div>
 
-    <!-- Chatbot Popup -->
-    <div id="chatWindow" class="chat-window">
-        <div class="chat-header">
-            <span>Chatbot</span>
-            <button id="closeChat" class="close-button">X</button>
+    <!-- Conteneur du chatbot -->
+    <div id="chatbot-container">
+        <!-- En-tête du chatbot -->
+        <div id="chatbot-header">
+            <h2>Chatbot</h2>
+            <button onclick="toggleChatbot()">X</button>
         </div>
-        <div class="chat-content">
-            <div class="message bot-message">Bonjour, comment puis-je vous aider ?</div>
+
+        <!-- Fenêtre des messages -->
+        <div id="chatbot-messages">
+            <div class="bot-message">Bonjour, comment puis-je vous aider ?</div>
         </div>
-        <input type="text" id="userMessage" placeholder="Écrivez votre message..." />
-        <button id="sendMessage" class="send-button">Envoyer</button>
+
+        <!-- Champ de saisie -->
+        <div id="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="Écrivez votre message...">
+            <button onclick="sendMessage()">Envoyer</button>
+        </div>
     </div>
 
     <script>
-        // Open the chat window
-        document.getElementById('chatButton').addEventListener('click', function() {
-            document.getElementById('chatWindow').style.display = 'block';
-        });
+        // Fonction pour afficher/masquer le chatbot
+        function toggleChatbot() {
+            const chatbot = document.getElementById('chatbot-container');
+            chatbot.style.display = chatbot.style.display === 'block' ? 'none' : 'block';
+        }
 
-        // Close the chat window
-        document.getElementById('closeChat').addEventListener('click', function() {
-            document.getElementById('chatWindow').style.display = 'none';
-        });
+        // Fonction pour envoyer un message
+        function sendMessage() {
+            const input = document.getElementById('chatbot-input');
+            const messages = document.getElementById('chatbot-messages');
 
-        // Send message functionality
-        document.getElementById('sendMessage').addEventListener('click', function() {
-            var userMessage = document.getElementById('userMessage').value;
-            if (userMessage) {
-                var newMessage = document.createElement('div');
-                newMessage.classList.add('message', 'user-message');
-                newMessage.textContent = userMessage;
-                document.querySelector('.chat-content').appendChild(newMessage);
-                document.getElementById('userMessage').value = ''; // Clear input field
-                // Scroll to the bottom
-                document.querySelector('.chat-content').scrollTop = document.querySelector('.chat-content').scrollHeight;
+            if (input.value.trim() !== '') {
+                // Ajout du message utilisateur
+                const userMessage = document.createElement('div');
+                userMessage.className = 'user-message';
+                userMessage.textContent = input.value;
+                messages.appendChild(userMessage);
+
+                // Ajout d'une réponse automatique du bot
+                const botMessage = document.createElement('div');
+                botMessage.className = 'bot-message';
+                botMessage.textContent = "Merci pour votre message !";
+                messages.appendChild(botMessage);
+
+                // Efface le champ de saisie
+                input.value = '';
+
+                // Scroll en bas
+                messages.scrollTop = messages.scrollHeight;
             }
-        });
+        }
     </script>
 </body>
 </html>
+
