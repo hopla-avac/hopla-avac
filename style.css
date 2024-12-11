@@ -105,17 +105,52 @@ body {
 
 .tarif-card {
     background-color: white;
+    border-radius: 10px;
     border: 1px solid #ddd;
     padding: 20px;
     width: 23%;
     text-align: center;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarif-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
 
 .tarif-price {
     font-size: 1.5rem;
     color: red;
+    font-weight: bold;
+    margin-top: 10px;
 }
+
+.tarif-card h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.tarif-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Ajouter des espaces entre les cartes dans les petits écrans */
+@media (max-width: 768px) {
+    .tarif-card {
+        width: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .tarif-card {
+        width: 100%;
+    }
+}
+
 
 /* ABOUT SECTION */
 #about {
