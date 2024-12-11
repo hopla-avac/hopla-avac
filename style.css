@@ -101,18 +101,18 @@ body {
 .tarifs-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly; /* Réduit encore l'espace entre les cartes */
-    gap: 10px; /* Réduit l'écart entre les cartes */
+    justify-content: space-between; /* Réduit encore l'espace entre les cartes */
+    gap: 5px; /* Réduit l'écart à 5px */
 }
 
 .tarif-card {
     background-color: white;
     border-radius: 10px;
     border: 1px solid #ddd;
-    padding: 30px;
-    width: 250px; 
+    padding: 20px; /* Réduit l'espace interne des cartes */
+    width: 230px;  /* Réduit la largeur de chaque carte */
     text-align: center;
-    margin-bottom: 10px; /* Réduit l'espace sous les cartes */
+    margin-bottom: 5px; /* Réduit l'espace sous les cartes */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -153,6 +153,7 @@ body {
         width: 100%;
     }
 }
+
 
 
 /* ABOUT SECTION */
