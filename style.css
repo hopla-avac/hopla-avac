@@ -65,8 +65,8 @@ body {
 .services-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Équilibre les espaces entre les cartes */
-    gap: 10px; /* Réduit l'écart entre les cartes */
+    justify-content: space-between;
+    gap: 20px; /* Réduit l'écart horizontal et vertical entre les cartes à 20px (~2cm) */
 }
 
 .service-card {
@@ -74,9 +74,9 @@ body {
     border-radius: 10px;
     border: 1px solid #ddd;
     padding: 20px;
-    width: 230px; /* Largeur similaire à la section Tarifs */
+    width: 230px;
     text-align: center;
-    margin-bottom: 10px; /* Espace minimal entre les cartes */
+    margin-bottom: 20px; /* Correspond à l'espace vertical entre les cartes */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
 }
