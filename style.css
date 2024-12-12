@@ -72,58 +72,76 @@ body {
 }
 
 /* Style des cartes */
+/* Conteneur général de la section */
+.services-section {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Style des cartes */
 .service-card {
-    background-color: white;
-    border-radius: 8px; /* Coins arrondis */
-    border: 1px solid #ddd; /* Bordure légère */
-    padding: 20px;
-    width: 30%; /* Ajuste la largeur */
-    text-align: center;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 1rem); /* Trois cartes par ligne */
+  min-width: 280px; /* Largeur minimale */
+  max-width: 350px; /* Largeur maximale */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px); /* Légère élévation au survol */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre plus marquée */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Images dans les cartes */
+/* Image de la carte */
 .service-card img {
-    width: 100%;
-    height: 180px; /* Taille standard pour toutes les images */
-    object-fit: cover;
-    border-radius: 6px; /* Coins arrondis pour l'image */
-    margin-bottom: 15px;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
 }
 
-/* Titres des cartes */
+/* Contenu de la carte */
+.service-card .card-content {
+  padding: 1rem;
+  text-align: center;
+}
+
 .service-card h3 {
-    font-size: 1.3rem;
-    color: #333;
-    margin-bottom: 10px;
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+  color: #333;
 }
 
-/* Description des cartes */
 .service-card p {
-    font-size: 0.95rem;
-    color: #666;
-    line-height: 1.5; /* Espacement pour une bonne lisibilité */
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.5rem 0 0;
 }
 
-/* Media Queries pour rendre responsive */
-@media (max-width: 1024px) {
-    .service-card {
-        width: 45%; /* Deux colonnes sur écrans moyens */
-    }
+/* Adaptation pour les écrans moyens */
+@media (max-width: 992px) {
+  .service-card {
+    width: calc(50% - 1rem); /* Deux cartes par ligne */
+  }
 }
 
-@media (max-width: 768px) {
-    .service-card {
-        width: 100%; /* Une colonne sur petits écrans */
-    }
+/* Adaptation pour les petits écrans */
+@media (max-width: 576px) {
+  .service-card {
+    width: 100%; /* Une seule carte par ligne */
+  }
 }
-
 
 
 /* Section des tarifs */
