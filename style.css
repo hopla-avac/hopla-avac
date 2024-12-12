@@ -89,7 +89,7 @@ body {
 
 .service-card img {
     width: 100%; /* Les images occupent toute la largeur de leur conteneur */
-    height: 200px; /* Fixe une hauteur uniforme */
+    height: 300px; /* Fixe une hauteur uniforme */
     object-fit: cover; /* Coupe ou ajuste l'image pour qu'elle remplisse les dimensions */
     border-radius: 10px; /* Ajoute des coins arrondis pour correspondre à la carte */
     display: block; /* Corrige tout décalage éventuel */
