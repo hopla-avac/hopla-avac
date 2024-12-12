@@ -65,21 +65,20 @@ body {
 .services-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 60px; /* Réduit l'écart horizontal et vertical entre les cartes à 20px (~2cm) */
+    justify-content: space-evenly; /* Réduit l'espace horizontal */
+    gap: 10px; /* Diminue l'espacement entre les cartes */
 }
 
 .service-card {
+    margin: 5px; /* Réduction des marges extérieures */
+    width: 30%; /* Ajustez la largeur pour un meilleur agencement */
+    text-align: center;
     background-color: white;
     border-radius: 10px;
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: 230px;
-    text-align: center;
-    margin-bottom: 20px; /* Correspond à l'espace vertical entre les cartes */
+    padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
 }
+
 
 /* Effet au survol */
 .service-card:hover {
