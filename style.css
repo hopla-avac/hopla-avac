@@ -65,19 +65,20 @@ body {
 .services-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly; /* Réduit l'espace horizontal */
-    gap: 10px; /* Diminue l'espacement entre les cartes */
+    justify-content: space-between; /* Maintient l'espace équilibré */
+    gap: 5px; /* Réduit davantage l'écart entre les cartes */
 }
 
 .service-card {
-    margin: 5px; /* Réduction des marges extérieures */
-    width: 30%; /* Ajustez la largeur pour un meilleur agencement */
+    margin: 5px; /* Moins de marge entre les cartes */
+    width: 28%; /* Garde une taille raisonnable pour les cartes */
     text-align: center;
     background-color: white;
     border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* Ajustement pour réduire l'intérieur des cartes */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 
 /* Effet au survol */
