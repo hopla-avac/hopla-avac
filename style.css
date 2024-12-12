@@ -106,10 +106,10 @@ body {
 /* Image de la carte */
 .service-card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-bottom: 1px solid #ddd;
+  height: auto;
+  object-fit: cover;  /* Garde l'image proportionnelle sans zoom */
 }
+
 
 /* Contenu de la carte */
 .service-card .card-content {
